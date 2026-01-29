@@ -19,6 +19,29 @@ export const metadata: Metadata = {
   icons: {
     icon: "/Fabicon.svg",
   },
+  metadataBase: new URL("https://dental-care-d5g.pages.dev"),
+  openGraph: {
+    title: "Dental Care - רפואת שיניים לכל המשפחה | רמלה",
+    description: "מרפאת שיניים מתקדמת ברמלה. ד\"ר טאלב - השתלות שיניים, יישור שיניים, טיפולי שורש, רפואת ילדים ועוד. שירות חירום 24/7.",
+    url: "https://dental-care-d5g.pages.dev",
+    siteName: "Dental Care",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Dental Care - מרפאת שיניים ברמלה",
+      },
+    ],
+    locale: "he_IL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dental Care - רפואת שיניים לכל המשפחה | רמלה",
+    description: "מרפאת שיניים מתקדמת ברמלה. השתלות שיניים, יישור שיניים, טיפולי שורש. שירות חירום 24/7.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
