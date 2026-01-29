@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 
 // Configuration for 3D eye effect
@@ -54,7 +53,7 @@ function Eye({ className, ringOffset, pupilOffset, isBlinking }: EyeProps) {
       >
         {/* Ring (טבעת) - moves within eye socket */}
         <div
-          className="absolute top-1/2 left-1/2 w-[22px] h-[22px] rounded-full border border-[#9B6AF1] flex items-center justify-center"
+          className="absolute top-1/2 left-1/2 w-[22px] h-[22px] rounded-full border-2 border-[#9B6AF1] flex items-center justify-center"
           style={{
             transform: `translate(calc(-50% + ${ringOffset.x}px), calc(-50% + ${ringOffset.y}px))`,
             transition: 'transform 0.05s ease-out',
@@ -299,7 +298,7 @@ export default function Character() {
 
       {/* Twinkling Star - Top Left of Character */}
       <motion.div
-        className="absolute top-[19px] left-[78px] w-8 h-8 z-30"
+        className="absolute top-[-6px] left-[53px] w-8 h-8 z-30"
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: [0, 1, 0.6, 1, 0],
@@ -334,26 +333,35 @@ export default function Character() {
         }}
       >
         <div className="relative">
-          <Image
-            src="/דמות.svg"
+          {/* Eyes behind the PNG (visible through holes) */}
+          <Eye
+            className="top-[37px] left-[72px]"
+            ringOffset={ringOffset}
+            pupilOffset={pupilOffset}
+            isBlinking={isBlinking}
+          />
+          <Eye
+            className="top-[45px] left-[131px]"
+            ringOffset={ringOffset}
+            pupilOffset={pupilOffset}
+            isBlinking={isBlinking}
+          />
+          {/* Character PNG with transparent eye holes */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/דמות.png"
             alt="Dental Care Character"
-            width={288}
-            height={288}
+            width={240}
+            height={238}
             className="mr-8"
-          />
-          {/* Left eye (character's left) - adjust position */}
-          <Eye
-            className="top-[64px] left-[93px]"
-            ringOffset={ringOffset}
-            pupilOffset={pupilOffset}
-            isBlinking={isBlinking}
-          />
-          {/* Right eye */}
-          <Eye
-            className="top-[69px] left-[153px]"
-            ringOffset={ringOffset}
-            pupilOffset={pupilOffset}
-            isBlinking={isBlinking}
+            style={{
+              filter: `
+                drop-shadow(1px 0 0 #9B6AF1)
+                drop-shadow(-1px 0 0 #9B6AF1)
+                drop-shadow(0 1px 0 #9B6AF1)
+                drop-shadow(0 -1px 0 #9B6AF1)
+              `
+            }}
           />
         </div>
       </motion.div>
