@@ -289,11 +289,10 @@ export default function Character() {
           ease: "easeInOut",
         }}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/star.svg"
           alt=""
-          width={32}
-          height={32}
           className="w-full h-full"
         />
       </motion.div>

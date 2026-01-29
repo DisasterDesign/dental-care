@@ -62,11 +62,10 @@ export default function Hero() {
                   ease: "easeOut",
                 }}
               >
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/star.svg"
                   alt=""
-                  width={48}
-                  height={48}
                   className="w-full h-full"
                 />
               </motion.div>
