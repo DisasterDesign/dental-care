@@ -60,7 +60,7 @@ export default function Header() {
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
     >
       {/* Top Row */}
-      <div className="py-4 px-6 md:px-12 lg:px-16">
+      <div className="py-4 px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="flex justify-between items-center">
           {/* Right - Logo */}
           <motion.a
@@ -72,7 +72,7 @@ export default function Header() {
             whileHover={{ scale: 1.03 }}
           >
             <motion.div
-              className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center"
               initial={{ rotate: -10, scale: 0.8 }}
               animate={{ rotate: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 150 }}
@@ -91,8 +91,8 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-3xl md:text-4xl font-bold text-[#26BEFF]">Dental Care</h1>
-              <p className="text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#26BEFF]">Dental Care</h1>
+              <p className="text-sm sm:text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
             </motion.div>
           </motion.a>
 
@@ -120,7 +120,7 @@ export default function Header() {
       </div>
 
       {/* Bottom Row */}
-      <div className="py-3 px-6 md:px-12 lg:px-16">
+      <div className="py-3 px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="flex justify-between items-center">
           {/* Right - Navigation Menu */}
           <nav className="hidden md:flex items-center gap-8">

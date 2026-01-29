@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="relative z-10">
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <Stats />
         <Services />

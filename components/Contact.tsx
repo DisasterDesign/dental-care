@@ -34,13 +34,13 @@ export default function Contact() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="inline-block px-8 py-5 rounded-2xl mb-4 bg-white/25 backdrop-blur-md border border-white/40"
+            className="inline-block px-6 sm:px-8 py-4 sm:py-5 rounded-2xl mb-4 bg-white/25 backdrop-blur-md border border-white/40"
             initial={{ scale: 0.5, opacity: 0, rotateY: 20 }}
             whileInView={{ scale: 1, opacity: 1, rotateY: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A2B3C]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A2B3C]">
               צרו קשר
             </h2>
           </motion.div>
@@ -56,13 +56,13 @@ export default function Contact() {
         </motion.div>
 
         <motion.div
-          className="p-10 md:p-14 rounded-[32px] bg-white/20 backdrop-blur-md border border-white/40"
+          className="p-6 sm:p-10 md:p-14 rounded-[32px] bg-white/20 backdrop-blur-md border border-white/40"
           initial={{ opacity: 0, y: 100, scale: 0.85 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
             {/* Contact Info */}
             <motion.div
               variants={containerVariants}
@@ -71,7 +71,7 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <motion.h3
-                className="text-2xl font-bold text-[#1A2B3C] mb-8"
+                className="text-xl sm:text-2xl font-bold text-[#1A2B3C] mb-6 sm:mb-8"
                 variants={itemVariants}
                 transition={{ duration: 0.7 }}
               >
@@ -86,10 +86,10 @@ export default function Contact() {
                   transition={{ duration: 0.7 }}
                 >
                   <motion.div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/30 backdrop-blur-md border border-white/40"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/30 backdrop-blur-md border border-white/40"
                     whileHover={{ scale: 1.25, rotate: 15, transition: { duration: 0.15 } }}
                   >
-                    <MapPin size={24} className="text-[#26BEFF]" />
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#26BEFF]" />
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-[#1A2B3C] mb-1">כתובת</h4>
@@ -104,10 +104,10 @@ export default function Contact() {
                   transition={{ duration: 0.7 }}
                 >
                   <motion.div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/30 backdrop-blur-md border border-white/40"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/30 backdrop-blur-md border border-white/40"
                     whileHover={{ scale: 1.25, rotate: 15, transition: { duration: 0.15 } }}
                   >
-                    <Phone size={24} className="text-[#26BEFF]" />
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-[#26BEFF]" />
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-[#1A2B3C] mb-1">טלפון</h4>
@@ -135,10 +135,10 @@ export default function Contact() {
                   transition={{ duration: 0.7 }}
                 >
                   <motion.div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/30 backdrop-blur-md border border-white/40"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/30 backdrop-blur-md border border-white/40"
                     whileHover={{ scale: 1.25, rotate: 15, transition: { duration: 0.15 } }}
                   >
-                    <Clock size={24} className="text-[#26BEFF]" />
+                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#26BEFF]" />
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-[#1A2B3C] mb-1">שעות פעילות</h4>
@@ -153,7 +153,7 @@ export default function Contact() {
                 href="https://wa.me/972525212118?text=שלום, אשמח לקבוע תור"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full text-[#25D366] py-4 px-6 rounded-xl flex items-center justify-center gap-3 font-semibold text-lg bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
+                className="mt-6 sm:mt-8 w-full text-[#25D366] py-3 sm:py-4 px-4 sm:px-6 rounded-xl flex items-center justify-center gap-3 font-semibold text-base sm:text-lg bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
                 variants={itemVariants}
                 transition={{ duration: 0.7 }}
                 whileHover={{ y: -8, scale: 1.03, boxShadow: "0 20px 40px rgba(37, 211, 102, 0.25)", transition: { duration: 0.15 } }}
@@ -166,7 +166,7 @@ export default function Contact() {
 
             {/* Map Placeholder */}
             <motion.div
-              className="rounded-2xl min-h-[350px] flex items-center justify-center bg-white/25 backdrop-blur-md border border-white/40"
+              className="rounded-2xl min-h-[250px] sm:min-h-[350px] flex items-center justify-center bg-white/25 backdrop-blur-md border border-white/40"
               initial={{ opacity: 0, x: 80, rotateY: -15 }}
               whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
               viewport={{ once: true }}

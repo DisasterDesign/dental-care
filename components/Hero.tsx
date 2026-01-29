@@ -18,9 +18,9 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[60vh] flex items-end pb-16">
-      {/* Animated SVG Tooth - Left Side, Massive & Extends Beyond Section */}
+      {/* Animated SVG Tooth - Left Side, Massive & Extends Beyond Section - Hidden on mobile */}
       <motion.div
-        className="fixed -left-[400px] md:-left-[350px] lg:-left-[300px] top-[65%] -translate-y-1/2 w-[700px] md:w-[900px] lg:w-[1100px] h-auto z-0 pointer-events-none"
+        className="fixed -left-[400px] md:-left-[350px] lg:-left-[300px] top-[65%] -translate-y-1/2 w-[700px] md:w-[900px] lg:w-[1100px] h-auto z-0 pointer-events-none hidden md:block"
         aria-hidden="true"
         style={{ opacity: toothOpacity }}
       >
@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="container-custom relative z-10 w-full">
         {/* Quick Actions - Centered */}
         <motion.div
-          className="flex flex-wrap justify-center gap-6"
+          className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6"
           initial="initial"
           animate="animate"
           variants={{
@@ -41,52 +41,52 @@ export default function Hero() {
         >
           <motion.a
             href="#contact"
-            className="px-10 py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-5 sparkle-hover"
+            className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
             variants={cardReveal}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
           >
             <motion.div
-              className="w-16 h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
               whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
             >
-              <MapPin size={32} className="text-[#26BEFF]" />
+              <MapPin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
             </motion.div>
-            <span className="text-xl font-medium text-[#1A2B3C]">רח&apos; משה לוי 16, רמלה</span>
+            <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">רח&apos; משה לוי 16, רמלה</span>
           </motion.a>
 
           <motion.a
             href="https://wa.me/972525212118"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-5 sparkle-hover"
+            className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
             variants={cardReveal}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
           >
             <motion.div
-              className="w-16 h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
               whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
             >
-              <Calendar size={32} className="text-[#26BEFF]" />
+              <Calendar className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
             </motion.div>
-            <span className="text-xl font-medium text-[#1A2B3C]">קביעת תור בוואטסאפ</span>
+            <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">קביעת תור בוואטסאפ</span>
           </motion.a>
 
           <motion.a
             href="tel:052-521-2118"
-            className="px-10 py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-5 sparkle-hover"
+            className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
             variants={cardReveal}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
           >
             <motion.div
-              className="w-16 h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
               whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
             >
-              <Phone size={32} className="text-[#26BEFF]" />
+              <Phone className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
             </motion.div>
-            <span className="text-xl font-medium text-[#1A2B3C]">שירות 24/7</span>
+            <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">שירות 24/7</span>
           </motion.a>
         </motion.div>
       </div>

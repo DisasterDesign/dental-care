@@ -92,13 +92,13 @@ export default function Services() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="inline-block px-8 py-5 rounded-2xl mb-4 bg-white/25 backdrop-blur-md border border-white/40"
+            className="inline-block px-6 sm:px-8 py-4 sm:py-5 rounded-2xl mb-4 bg-white/25 backdrop-blur-md border border-white/40"
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, type: "spring", stiffness: 150 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A2B3C]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A2B3C]">
               הטיפולים שלנו
             </h2>
           </motion.div>
@@ -115,7 +115,7 @@ export default function Services() {
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
           variants={containerVariants}
           initial="initial"
           whileInView="animate"
@@ -124,7 +124,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="p-7 text-center cursor-pointer rounded-[20px] bg-white/25 backdrop-blur-md border border-white/40 transition-colors duration-300 hover:bg-white/35 sparkle-hover"
+              className="p-5 sm:p-6 md:p-7 text-center cursor-pointer rounded-[20px] bg-white/25 backdrop-blur-md border border-white/40 transition-colors duration-300 hover:bg-white/35 sparkle-hover"
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{
@@ -136,10 +136,10 @@ export default function Services() {
               }}
             >
               <motion.div
-                className="w-[72px] h-[72px] rounded-full flex items-center justify-center mx-auto mb-5 bg-white/30 backdrop-blur-md border border-white/40"
+                className="w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-5 bg-white/30 backdrop-blur-md border border-white/40"
                 whileHover={{ scale: 1.25, rotate: 15, transition: { duration: 0.15 } }}
               >
-                <service.icon size={32} className="text-[#26BEFF]" />
+                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
               </motion.div>
               <h3 className="text-lg font-semibold text-[#1A2B3C] mb-3">
                 {service.title}

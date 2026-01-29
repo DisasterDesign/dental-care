@@ -49,7 +49,7 @@ export default function WhyUs() {
       <SparkleIcon position="bottom-left" size={22} delay={0.7} />
       <div className="container-custom" style={{ perspective: 1200 }}>
         <motion.div
-          className="p-10 md:p-14 rounded-[32px] bg-white/20 backdrop-blur-md border border-white/40"
+          className="p-6 sm:p-10 md:p-14 rounded-[32px] bg-white/20 backdrop-blur-md border border-white/40"
           initial={{ opacity: 0, y: 100, scale: 0.85 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -64,13 +64,13 @@ export default function WhyUs() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
             <motion.div
-              className="inline-block px-8 py-5 rounded-2xl mb-4 bg-white/30 backdrop-blur-md border border-white/40"
+              className="inline-block px-6 sm:px-8 py-4 sm:py-5 rounded-2xl mb-4 bg-white/30 backdrop-blur-md border border-white/40"
               initial={{ scale: 0.5, opacity: 0, rotateX: 30 }}
               whileInView={{ scale: 1, opacity: 1, rotateX: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1A2B3C]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A2B3C]">
                 למה לבחור ב-Dental Care?
               </h2>
             </motion.div>
@@ -87,7 +87,7 @@ export default function WhyUs() {
 
           {/* Benefits Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
             variants={containerVariants}
             initial="initial"
             whileInView="animate"
@@ -101,7 +101,7 @@ export default function WhyUs() {
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               >
                 <motion.div
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 bg-white/30 backdrop-blur-md border border-white/40"
+                  className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl mb-4 bg-white/30 backdrop-blur-md border border-white/40"
                   initial={{ scale: 0, rotate: -45 }}
                   whileInView={{ scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
@@ -113,7 +113,7 @@ export default function WhyUs() {
                   }}
                   whileHover={{ scale: 1.3, rotate: 15, transition: { duration: 0.15 } }}
                 >
-                  <benefit.icon size={32} className="text-[#26BEFF]" />
+                  <benefit.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
                 </motion.div>
                 <h3 className="text-lg font-bold text-[#1A2B3C] mb-2">
                   {benefit.title}

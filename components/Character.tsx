@@ -268,9 +268,9 @@ export default function Character() {
   }, [isTouchDevice]);
 
   return (
-    <div ref={containerRef} className="fixed bottom-[140px] right-0 z-20 pointer-events-none">
+    <div ref={containerRef} className="fixed bottom-[140px] right-0 z-20 pointer-events-none hidden lg:block">
       {/* Blue bar - 1 pixel */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-px bg-[#26BEFF]" />
+      <div className="absolute bottom-0 right-0 w-full lg:w-[600px] h-px bg-[#26BEFF]" />
 
       {/* Character standing on the bar */}
       <motion.div
