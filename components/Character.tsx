@@ -349,7 +349,7 @@ export default function Character() {
           {/* Character PNG with transparent eye holes */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/דמות.png"
+            src="/character.png"
             alt="Dental Care Character"
             width={240}
             height={238}
