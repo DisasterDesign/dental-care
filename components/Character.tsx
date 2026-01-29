@@ -269,12 +269,37 @@ export default function Character() {
 
   return (
     <div ref={containerRef} className="fixed bottom-[140px] right-0 z-20 pointer-events-none hidden lg:block">
-      {/* Blue bar - 1 pixel */}
-      <div className="absolute bottom-0 right-0 w-full lg:w-[600px] h-px bg-[#26BEFF]" />
+      {/* Blue bar - animated path */}
+      <svg
+        className="absolute bottom-0 right-0 w-full lg:w-[600px] h-[4px] overflow-visible"
+        viewBox="0 0 600 4"
+        preserveAspectRatio="none"
+        fill="none"
+      >
+        <motion.path
+          d="M600 2 L0 2"
+          stroke="#26BEFF"
+          strokeWidth="2"
+          strokeLinecap="round"
+          initial={{ pathLength: 0, pathOffset: 0 }}
+          animate={{
+            pathLength: [0, 1, 1, 1],
+            pathOffset: [0, 0, 0, 1],
+          }}
+          transition={{
+            duration: 4,
+            delay: 1.5,
+            repeat: Infinity,
+            repeatDelay: 0,
+            ease: "easeInOut",
+            times: [0, 0.15, 0.6, 1],
+          }}
+        />
+      </svg>
 
       {/* Twinkling Star - Top Left of Character */}
       <motion.div
-        className="absolute top-[-6px] left-[53px] w-8 h-8 z-30"
+        className="absolute top-[19px] left-[78px] w-8 h-8 z-30"
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: [0, 1, 0.6, 1, 0],

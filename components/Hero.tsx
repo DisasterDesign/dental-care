@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { MapPin, Calendar, Phone } from 'lucide-react';
-import Image from 'next/image';
 import AnimatedTooth from './AnimatedTooth';
 
 const cardReveal = {
@@ -11,8 +10,39 @@ const cardReveal = {
   animate: { opacity: 1, y: 0, rotateY: 0 }
 };
 
+// Twinkling star component for button hover - positioned relative to wrapper
+function HoverStar({ isVisible }: { isVisible: boolean }) {
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          className="absolute -top-4 -right-4 w-10 h-10 pointer-events-none z-50"
+          initial={{ opacity: 0, scale: 0, rotate: -30 }}
+          animate={{
+            opacity: [0, 1, 0.7, 1],
+            scale: [0.3, 1.3, 0.95, 1.1],
+            rotate: [-30, 20, -5, 10],
+          }}
+          exit={{ opacity: 0, scale: 0, rotate: 30 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/star.svg"
+            alt=""
+            className="w-full h-full"
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function Hero() {
-  const [isHoveringButtons, setIsHoveringButtons] = useState(false);
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
   // Scroll-based animation
   const { scrollY } = useScroll();
@@ -36,8 +66,6 @@ export default function Hero() {
         {/* Quick Actions - Centered */}
         <motion.div
           className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 relative"
-          onMouseEnter={() => setIsHoveringButtons(true)}
-          onMouseLeave={() => setIsHoveringButtons(false)}
           initial="initial"
           animate="animate"
           variants={{
@@ -45,82 +73,79 @@ export default function Hero() {
             animate: { transition: { staggerChildren: 0.15, delayChildren: 0.5 } }
           }}
         >
-          {/* Twinkling Star on Hover - Right Side */}
-          <AnimatePresence>
-            {isHoveringButtons && (
+          {/* Button 1 - Address */}
+          <motion.div
+            className="relative"
+            variants={cardReveal}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            onMouseEnter={() => setHoveredButton('address')}
+            onMouseLeave={() => setHoveredButton(null)}
+          >
+            <HoverStar isVisible={hoveredButton === 'address'} />
+            <motion.a
+              href="#contact"
+              className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
+              whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
+            >
               <motion.div
-                className="absolute -top-8 -right-4 sm:-right-8 md:-right-12 w-10 h-10 sm:w-12 sm:h-12 pointer-events-none hidden sm:block"
-                initial={{ opacity: 0, scale: 0, rotate: -30 }}
-                animate={{
-                  opacity: [0, 1, 0.7, 1],
-                  scale: [0.3, 1.3, 0.95, 1.1],
-                  rotate: [-30, 20, -5, 10],
-                }}
-                exit={{ opacity: 0, scale: 0, rotate: 30 }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                }}
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
+                whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/star.svg"
-                  alt=""
-                  className="w-full h-full"
-                />
+                <MapPin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
               </motion.div>
-            )}
-          </AnimatePresence>
+              <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">רח&apos; משה לוי 16, רמלה</span>
+            </motion.a>
+          </motion.div>
 
-          <motion.a
-            href="#contact"
-            className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
+          {/* Button 2 - WhatsApp */}
+          <motion.div
+            className="relative"
             variants={cardReveal}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
+            onMouseEnter={() => setHoveredButton('whatsapp')}
+            onMouseLeave={() => setHoveredButton(null)}
           >
-            <motion.div
-              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
-              whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
+            <HoverStar isVisible={hoveredButton === 'whatsapp'} />
+            <motion.a
+              href="https://wa.me/972525212118"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
+              whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
             >
-              <MapPin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
-            </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">רח&apos; משה לוי 16, רמלה</span>
-          </motion.a>
+              <motion.div
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
+                whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
+              >
+                <Calendar className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
+              </motion.div>
+              <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">קביעת תור בוואטסאפ</span>
+            </motion.a>
+          </motion.div>
 
-          <motion.a
-            href="https://wa.me/972525212118"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
+          {/* Button 3 - Phone */}
+          <motion.div
+            className="relative"
             variants={cardReveal}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
+            onMouseEnter={() => setHoveredButton('phone')}
+            onMouseLeave={() => setHoveredButton(null)}
           >
-            <motion.div
-              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
-              whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
+            <HoverStar isVisible={hoveredButton === 'phone'} />
+            <motion.a
+              href="tel:052-521-2118"
+              className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
+              whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
             >
-              <Calendar className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
-            </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">קביעת תור בוואטסאפ</span>
-          </motion.a>
-
-          <motion.a
-            href="tel:052-521-2118"
-            className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
-            variants={cardReveal}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
-          >
-            <motion.div
-              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
-              whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
-            >
-              <Phone className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
-            </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">שירות 24/7</span>
-          </motion.a>
+              <motion.div
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-white/60 border border-white/80 flex-shrink-0"
+                whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
+              >
+                <Phone className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
+              </motion.div>
+              <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">שירות 24/7</span>
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
