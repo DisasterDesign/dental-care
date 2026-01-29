@@ -91,6 +91,21 @@ export default function Character() {
   const [ringOffset, setRingOffset] = useState<RingOffset>({ x: 0, y: 0 });
   const [pupilOffset, setPupilOffset] = useState<PupilOffset>({ x: 0, y: 0 });
   const [isBlinking, setIsBlinking] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect touch device
+  useEffect(() => {
+    const checkTouch = () => {
+      setIsTouchDevice(
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches
+      );
+    };
+    checkTouch();
+    window.addEventListener('resize', checkTouch);
+    return () => window.removeEventListener('resize', checkTouch);
+  }, []);
 
   // Blinking effect
   useEffect(() => {
@@ -103,8 +118,79 @@ export default function Character() {
     return () => clearInterval(blinkInterval);
   }, []);
 
-  // Eye tracking with separate ring and pupil movement
+  // Random eye movement for mobile/touch devices
   useEffect(() => {
+    if (!isTouchDevice) return;
+
+    let animationFrame: number;
+    let currentRing = { x: 0, y: 0 };
+    let currentPupil = { x: 0, y: 0 };
+    let targetRing = { x: 0, y: 0 };
+    let targetPupil = { x: 0, y: 0 };
+
+    const lerp = (start: number, end: number, factor: number) =>
+      start + (end - start) * factor;
+
+    // Generate new random target
+    const generateNewTarget = () => {
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 0.3 + Math.random() * 0.5; // 30-80% of max movement
+
+      targetRing = {
+        x: Math.cos(angle) * config.ringMaxMove * distance * 0.6,
+        y: Math.sin(angle) * config.ringMaxMove * distance * 0.6,
+      };
+      targetPupil = {
+        x: Math.cos(angle) * config.pupilMaxMove * distance,
+        y: Math.sin(angle) * config.pupilMaxMove * distance,
+      };
+    };
+
+    // Animation loop
+    const animate = () => {
+      currentRing = {
+        x: lerp(currentRing.x, targetRing.x, 0.03), // Slower, gentler movement
+        y: lerp(currentRing.y, targetRing.y, 0.03),
+      };
+      currentPupil = {
+        x: lerp(currentPupil.x, targetPupil.x, 0.03),
+        y: lerp(currentPupil.y, targetPupil.y, 0.03),
+      };
+
+      setRingOffset({ ...currentRing });
+      setPupilOffset({ ...currentPupil });
+
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    // Start animation
+    animationFrame = requestAnimationFrame(animate);
+
+    // Change target periodically
+    const targetInterval = setInterval(() => {
+      // Sometimes look center, sometimes look around
+      if (Math.random() > 0.3) {
+        generateNewTarget();
+      } else {
+        // Return to center-ish
+        targetRing = { x: 0, y: 0 };
+        targetPupil = { x: 0, y: 0 };
+      }
+    }, 2000 + Math.random() * 2000); // Change every 2-4 seconds
+
+    // Initial target
+    generateNewTarget();
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      clearInterval(targetInterval);
+    };
+  }, [isTouchDevice]);
+
+  // Eye tracking with separate ring and pupil movement (desktop only)
+  useEffect(() => {
+    if (isTouchDevice) return;
+
     let animationFrame: number;
     let currentRing = { x: 0, y: 0 };
     let currentPupil = { x: 0, y: 0 };
@@ -130,7 +216,6 @@ export default function Character() {
       const angle = Math.atan2(deltaY, deltaX);
 
       // Multiplier for upward movement (deltaY < 0 = mouse above)
-      // DEBUG: increased to 4 to test movement range
       const upwardMultiplier = deltaY < 0 ? 4 : 1;
 
       // Ring movement (subtle, within eye socket)
@@ -139,22 +224,17 @@ export default function Character() {
         y: Math.sin(angle) * config.ringMaxMove * normalizedDistance * upwardMultiplier,
       };
 
-      // Pupil movement within ring:
-      // Close mouse (normalizedDistance small) = pupil centered
-      // Far mouse (normalizedDistance big) = pupil at edge of ring
+      // Pupil movement within ring
       const targetPupil = {
         x: Math.cos(angle) * config.pupilMaxMove * normalizedDistance,
         y: Math.sin(angle) * config.pupilMaxMove * normalizedDistance * upwardMultiplier,
       };
 
       const animate = () => {
-        // Animate ring
         currentRing = {
           x: lerp(currentRing.x, targetRing.x, config.smoothing),
           y: lerp(currentRing.y, targetRing.y, config.smoothing),
         };
-
-        // Animate pupil
         currentPupil = {
           x: lerp(currentPupil.x, targetPupil.x, config.smoothing),
           y: lerp(currentPupil.y, targetPupil.y, config.smoothing),
@@ -185,7 +265,7 @@ export default function Character() {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  }, [isTouchDevice]);
 
   return (
     <div ref={containerRef} className="fixed bottom-[140px] right-0 z-20 pointer-events-none">
