@@ -63,7 +63,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/כוכב.svg"
+                  src="/star.svg"
                   alt=""
                   width={48}
                   height={48}

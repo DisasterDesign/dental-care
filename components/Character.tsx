@@ -290,7 +290,7 @@ export default function Character() {
         }}
       >
         <Image
-          src="/כוכב.svg"
+          src="/star.svg"
           alt=""
           width={32}
           height={32}
