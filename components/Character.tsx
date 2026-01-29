@@ -274,7 +274,7 @@ export default function Character() {
 
       {/* Twinkling Star - Top Left of Character */}
       <motion.div
-        className="absolute -top-4 left-12 w-8 h-8 z-30"
+        className="absolute top-[-6px] left-[53px] w-8 h-8 z-30"
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: [0, 1, 0.6, 1, 0],
