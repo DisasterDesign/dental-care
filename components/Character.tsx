@@ -272,6 +272,32 @@ export default function Character() {
       {/* Blue bar - 1 pixel */}
       <div className="absolute bottom-0 right-0 w-full lg:w-[600px] h-px bg-[#26BEFF]" />
 
+      {/* Twinkling Star - Top Left of Character */}
+      <motion.div
+        className="absolute -top-4 left-12 w-8 h-8 z-30"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{
+          opacity: [0, 1, 0.6, 1, 0],
+          scale: [0.5, 1.2, 0.9, 1.1, 0.5],
+          rotate: [0, 15, -10, 5, 0],
+        }}
+        transition={{
+          duration: 3,
+          delay: 2,
+          repeat: Infinity,
+          repeatDelay: 2,
+          ease: "easeInOut",
+        }}
+      >
+        <Image
+          src="/כוכב.svg"
+          alt=""
+          width={32}
+          height={32}
+          className="w-full h-full"
+        />
+      </motion.div>
+
       {/* Character standing on the bar */}
       <motion.div
         className="relative -mb-[19px]"

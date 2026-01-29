@@ -1,7 +1,9 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { MapPin, Calendar, Phone } from 'lucide-react';
+import Image from 'next/image';
 import AnimatedTooth from './AnimatedTooth';
 
 const cardReveal = {
@@ -10,6 +12,8 @@ const cardReveal = {
 };
 
 export default function Hero() {
+  const [isHoveringButtons, setIsHoveringButtons] = useState(false);
+
   // Scroll-based animation
   const { scrollY } = useScroll();
 
@@ -31,7 +35,9 @@ export default function Hero() {
       <div className="container-custom relative z-10 w-full">
         {/* Quick Actions - Centered */}
         <motion.div
-          className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6"
+          className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 relative"
+          onMouseEnter={() => setIsHoveringButtons(true)}
+          onMouseLeave={() => setIsHoveringButtons(false)}
           initial="initial"
           animate="animate"
           variants={{
@@ -39,6 +45,34 @@ export default function Hero() {
             animate: { transition: { staggerChildren: 0.15, delayChildren: 0.5 } }
           }}
         >
+          {/* Twinkling Star on Hover - Right Side */}
+          <AnimatePresence>
+            {isHoveringButtons && (
+              <motion.div
+                className="absolute -top-8 -right-4 sm:-right-8 md:-right-12 w-10 h-10 sm:w-12 sm:h-12 pointer-events-none hidden sm:block"
+                initial={{ opacity: 0, scale: 0, rotate: -30 }}
+                animate={{
+                  opacity: [0, 1, 0.7, 1],
+                  scale: [0.3, 1.3, 0.95, 1.1],
+                  rotate: [-30, 20, -5, 10],
+                }}
+                exit={{ opacity: 0, scale: 0, rotate: 30 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+              >
+                <Image
+                  src="/כוכב.svg"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="w-full h-full"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <motion.a
             href="#contact"
             className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
