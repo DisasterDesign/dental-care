@@ -4,6 +4,7 @@ import Stats from '@/components/Stats';
 import Services from '@/components/Services';
 import WhyUs from '@/components/WhyUs';
 import Contact from '@/components/Contact';
+import BottomSection from '@/components/BottomSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import Character from '@/components/Character';
@@ -18,6 +19,7 @@ export default function Home() {
         <Services />
         <WhyUs />
         <Contact />
+        <BottomSection />
       </main>
       <Footer />
       <WhatsAppButton />

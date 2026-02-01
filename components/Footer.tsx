@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import Link from 'next/link';
 
 const containerVariants = {
   initial: {},
@@ -82,6 +83,30 @@ export default function Footer() {
                 >
                   צור קשר
                 </motion.a>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-[#6B7280] hover:text-[#26BEFF] transition-colors block"
+                >
+                  מדיניות פרטיות
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-[#6B7280] hover:text-[#26BEFF] transition-colors block"
+                >
+                  תקנון האתר
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/accessibility"
+                  className="text-[#6B7280] hover:text-[#26BEFF] transition-colors block"
+                >
+                  הצהרת נגישות
+                </Link>
               </li>
             </ul>
           </motion.div>
