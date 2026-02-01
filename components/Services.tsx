@@ -87,7 +87,7 @@ const headerVariants = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-20 px-4 md:px-6 relative">
+    <section id="services" className="py-16 md:py-20 px-4 md:px-6 relative glass-section">
       <SparkleIcon position="top-left" size={28} delay={0} />
       <SparkleIcon position="top-right" size={20} delay={0.5} />
       <div className="container-custom" style={{ perspective: 1200 }}>
@@ -133,17 +133,19 @@ export default function Services() {
           {services.map((service, index) => (
             <Link key={index} href={`/services/${service.slug}`}>
               <motion.div
-                className="p-5 sm:p-6 md:p-7 text-center cursor-pointer rounded-[20px] bg-white/25 backdrop-blur-md border border-white/40 transition-colors duration-300 hover:bg-white/35 sparkle-hover h-full"
+                className="group relative p-[2px] rounded-[20px] h-full"
                 variants={itemVariants}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{
                   y: -15,
                   scale: 1.05,
-                  boxShadow: "0 30px 60px rgba(38, 190, 255, 0.15), 0 25px 50px rgba(155, 106, 241, 0.12)",
-                  rotateY: 5,
                   transition: { duration: 0.15 }
                 }}
               >
+                {/* Gradient border - visible on hover */}
+                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-[#26BEFF] to-[#9B6AF1] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Card content */}
+                <div className="relative p-5 sm:p-6 md:p-7 text-center cursor-pointer rounded-[18px] bg-white/25 backdrop-blur-md border border-white/40 group-hover:border-transparent transition-all duration-300 group-hover:bg-white/35 sparkle-hover h-full group-hover:shadow-[0_30px_60px_rgba(38,190,255,0.15),0_25px_50px_rgba(155,106,241,0.12)]">
                 <motion.div
                   className="w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px] rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-5 bg-white/30 backdrop-blur-md border border-white/40"
                   whileHover={{ scale: 1.25, rotate: 15, transition: { duration: 0.15 } }}
@@ -156,6 +158,7 @@ export default function Services() {
                 <p className="text-sm text-[#6B7280] leading-relaxed">
                   {service.description}
                 </p>
+                </div>
               </motion.div>
             </Link>
           ))}

@@ -44,7 +44,7 @@ const itemVariants = {
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-16 md:py-20 px-4 md:px-6 relative">
+    <section id="why-us" className="py-16 md:py-20 px-4 md:px-6 relative glass-section">
       <SparkleIcon position="top-right" size={24} delay={0.2} />
       <SparkleIcon position="bottom-left" size={22} delay={0.7} />
       <div className="container-custom" style={{ perspective: 1200 }}>

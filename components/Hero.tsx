@@ -73,7 +73,7 @@ export default function Hero() {
             animate: { transition: { staggerChildren: 0.15, delayChildren: 0.5 } }
           }}
         >
-          {/* Button 1 - Address */}
+          {/* Button 1 - Address - Opens Waze */}
           <motion.div
             className="relative"
             variants={cardReveal}
@@ -83,7 +83,9 @@ export default function Hero() {
           >
             <HoverStar isVisible={hoveredButton === 'address'} />
             <motion.a
-              href="#contact"
+              href="https://waze.com/ul?q=%D7%9E%D7%A9%D7%94%20%D7%9C%D7%95%D7%99%2016%20%D7%A8%D7%9E%D7%9C%D7%94&navigate=yes"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
               whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
             >

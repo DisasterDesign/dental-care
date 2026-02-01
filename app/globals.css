@@ -146,6 +146,16 @@
     border-top: 1px solid rgba(255, 255, 255, 0.4);
   }
 
+  /* Glass Section - for blurring elements behind (like character) */
+  .glass-section {
+    position: relative;
+    z-index: 10;
+    isolation: isolate;
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
   .glass-button {
     position: relative;
     isolation: isolate;

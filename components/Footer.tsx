@@ -22,7 +22,7 @@ const itemVariants = {
 export default function Footer() {
   return (
     <motion.footer
-      className="bg-white/20 backdrop-blur-md border-t border-white/40"
+      className="relative z-10 bg-white/20 backdrop-blur-md border-t border-white/40"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

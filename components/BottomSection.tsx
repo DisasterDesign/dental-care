@@ -5,9 +5,9 @@ import { Calendar, Phone, MapPin } from 'lucide-react';
 
 export default function BottomSection() {
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-24 overflow-hidden glass-section">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#26BEFF]/5 to-[#9B6AF1]/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#26BEFF]/5 to-[#9B6AF1]/5 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">

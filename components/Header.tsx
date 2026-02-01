@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Clock, Menu, X, Calendar, MessageSquare, Mail, Accessibility } from 'lucide-react';
+import { Phone, Clock, Menu, X, Calendar, MessageSquare, Mail, Accessibility, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import AccessibilityPanel from './accessibility/AccessibilityPanel';
+import { services } from '@/lib/services';
 
 interface IconButtonProps {
   icon: React.ElementType;
@@ -44,9 +46,22 @@ function IconButton({ icon: Icon, label, href, delay = 0, onClick }: IconButtonP
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAccessibilityOpen, setIsAccessibilityOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const navLinks = [
-    { href: '#services', label: 'שירותים' },
     { href: '#why-us', label: 'למה אנחנו' },
     { href: '#contact', label: 'צור קשר' },
   ];
@@ -64,7 +79,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Right - Logo */}
           <motion.a
-            href="#"
+            href="/"
             className="flex items-center gap-4"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -124,6 +139,75 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Right - Navigation Menu */}
           <nav className="hidden md:flex items-center gap-8">
+            {/* Services Dropdown */}
+            <div
+              ref={servicesDropdownRef}
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <motion.button
+                className="flex items-center gap-1 text-[#1A2B3C] hover:text-[#26BEFF] transition-colors font-medium relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ y: -3 }}
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              >
+                שירותים
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                />
+                <motion.span
+                  className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#26BEFF] origin-left"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isServicesOpen ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.button>
+
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    className="absolute top-full right-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-white/40 overflow-hidden z-50"
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="py-2">
+                      {/* Link to services section */}
+                      <a
+                        href="#services"
+                        className="block px-4 py-2 text-[#1A2B3C] hover:bg-[#26BEFF]/10 transition-colors font-semibold border-b border-gray-100"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        כל השירותים
+                      </a>
+                      {/* Individual service links */}
+                      {services.map((service) => {
+                        const Icon = service.icon;
+                        return (
+                          <Link
+                            key={service.slug}
+                            href={`/services/${service.slug}`}
+                            className="flex items-center gap-3 px-4 py-2.5 text-[#1A2B3C] hover:bg-[#26BEFF]/10 transition-colors"
+                            onClick={() => setIsServicesOpen(false)}
+                          >
+                            <Icon size={18} className="text-[#26BEFF]" />
+                            <span>{service.title}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Other nav links */}
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.href}
@@ -131,7 +215,7 @@ export default function Header() {
                 className="text-[#1A2B3C] hover:text-[#26BEFF] transition-colors font-medium relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                 whileHover={{ y: -3 }}
               >
                 {link.label}
@@ -147,6 +231,16 @@ export default function Header() {
 
           {/* Mobile - Show nav links */}
           <nav className="md:hidden flex items-center gap-4">
+            <button
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+              className="flex items-center gap-1 text-[#1A2B3C] hover:text-[#26BEFF] transition-colors font-medium text-sm"
+            >
+              שירותים
+              <ChevronDown
+                size={14}
+                className={`transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -181,6 +275,43 @@ export default function Header() {
           </motion.div>
         </div>
       </div>
+
+      {/* Mobile Services Dropdown */}
+      <AnimatePresence>
+        {isMobileServicesOpen && (
+          <motion.div
+            className="md:hidden bg-white/95 backdrop-blur-md border-b border-white/40 px-4 py-3 overflow-hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="#services"
+                className="col-span-2 px-3 py-2 text-center text-[#1A2B3C] font-semibold border-b border-gray-100 mb-1"
+                onClick={() => setIsMobileServicesOpen(false)}
+              >
+                כל השירותים
+              </a>
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="flex items-center gap-2 px-3 py-2 text-[#1A2B3C] text-sm hover:bg-[#26BEFF]/10 rounded-lg transition-colors"
+                    onClick={() => setIsMobileServicesOpen(false)}
+                  >
+                    <Icon size={16} className="text-[#26BEFF]" />
+                    <span>{service.title}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Navigation Dropdown */}
       <AnimatePresence>

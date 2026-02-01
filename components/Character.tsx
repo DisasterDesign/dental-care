@@ -267,7 +267,7 @@ export default function Character() {
   }, [isTouchDevice]);
 
   return (
-    <div ref={containerRef} className="fixed bottom-[140px] right-0 z-20 pointer-events-none hidden lg:block">
+    <div ref={containerRef} className="fixed bottom-[140px] right-0 z-[-1] pointer-events-none hidden lg:block">
       {/* Blue bar - animated path */}
       <svg
         className="absolute bottom-0 right-0 w-full lg:w-[600px] h-[4px] overflow-visible"

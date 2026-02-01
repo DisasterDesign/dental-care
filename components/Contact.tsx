@@ -21,7 +21,7 @@ const itemVariants = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-20 px-4 md:px-6 relative">
+    <section id="contact" className="py-16 md:py-20 px-4 md:px-6 relative glass-section">
       <SparkleIcon position="top-left" size={22} delay={0.3} />
       <SparkleIcon position="bottom-right" size={26} delay={0.8} />
       <div className="container-custom" style={{ perspective: 1200 }}>
@@ -164,38 +164,24 @@ export default function Contact() {
               </motion.a>
             </motion.div>
 
-            {/* Map Placeholder */}
+            {/* Google Map */}
             <motion.div
-              className="rounded-2xl min-h-[250px] sm:min-h-[350px] flex items-center justify-center bg-white/25 backdrop-blur-md border border-white/40"
+              className="rounded-2xl min-h-[250px] sm:min-h-[350px] overflow-hidden bg-white/25 backdrop-blur-md border border-white/40"
               initial={{ opacity: 0, x: 80, rotateY: -15 }}
               whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
             >
-              <div className="text-center p-8">
-                <motion.div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 bg-white/30 backdrop-blur-md border border-white/40"
-                  initial={{ scale: 0, rotate: -30 }}
-                  whileInView={{ scale: 1, rotate: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 150, damping: 12, delay: 0.7 }}
-                  whileHover={{ scale: 1.2 }}
-                >
-                  <MapPin size={40} className="text-[#26BEFF]" />
-                </motion.div>
-                <h4 className="text-xl font-bold text-[#1A2B3C] mb-2">Dental Care</h4>
-                <p className="text-[#6B7280] mb-6">רח&apos; משה לוי 16, רמלה</p>
-                <motion.a
-                  href="https://www.google.com/maps/search/?api=1&query=רח+משה+לוי+16+רמלה"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#26BEFF] px-6 py-3 rounded-xl font-semibold bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
-                  whileHover={{ y: -6, scale: 1.05, boxShadow: "0 20px 40px rgba(38, 190, 255, 0.2), 0 15px 30px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>פתח בגוגל מפות</span>
-                </motion.a>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.8!2d34.8706!3d31.9279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU1JzQwLjQiTiAzNMKwNTInMTQuMiJF!5e0!3m2!1siw!2sil!4v1706000000000!5m2!1siw!2sil&q=%D7%9E%D7%A9%D7%94+%D7%9C%D7%95%D7%99+16+%D7%A8%D7%9E%D7%9C%D7%94"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '350px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="מיקום מרפאת Dental Care"
+              />
             </motion.div>
           </div>
         </motion.div>
