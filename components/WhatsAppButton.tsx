@@ -20,24 +20,19 @@ export default function WhatsAppButton() {
       whileTap={{ scale: 0.9 }}
       aria-label="צור קשר בוואטסאפ"
     >
-      <div className="w-[54px] h-[54px] rounded-full bg-white flex items-center justify-center">
-        <MessageCircle size={28} className="text-[#26BEFF]" />
+      <div
+        className="relative z-10 w-[54px] h-[54px] rounded-full flex items-center justify-center"
+        style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #9B6AF1 100%)' }}
+      >
+        <MessageCircle size={28} className="text-white" />
       </div>
 
-      {/* Pulse effect */}
-      <motion.span
+      {/* Pulse effect — CSS animation instead of Framer Motion JS loop */}
+      <span
         className="absolute inset-0 rounded-full"
         style={{
           background: 'linear-gradient(135deg, #26BEFF 0%, #9B6AF1 100%)',
-        }}
-        animate={{
-          scale: [1, 1.4, 1.4],
-          opacity: [0.4, 0, 0]
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeOut"
+          animation: 'whatsapp-pulse 2s ease-out infinite',
         }}
       />
     </motion.a>

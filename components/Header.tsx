@@ -106,7 +106,7 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#26BEFF]">Dental Care</h1>
+              <h1 className="text-[1.35rem] sm:text-3xl md:text-4xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#9B6AF1] bg-clip-text text-transparent">Dental Care</h1>
               <p className="text-sm sm:text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
             </motion.div>
           </motion.a>
@@ -138,7 +138,25 @@ export default function Header() {
       <div className="py-3 px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="flex justify-between items-center">
           {/* Right - Navigation Menu */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-14 ms-[20px]">
+            {/* Home - rightmost in RTL */}
+            <motion.a
+              href="/"
+              className="text-[1.35rem] text-[#6D4AA9] hover:text-[#26BEFF] transition-colors font-bold relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ y: -3 }}
+            >
+              בית
+              <motion.span
+                className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#26BEFF] origin-left"
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.a>
+
             {/* Services Dropdown */}
             <div
               ref={servicesDropdownRef}
@@ -147,7 +165,7 @@ export default function Header() {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <motion.button
-                className="flex items-center gap-1 text-[#1A2B3C] hover:text-[#26BEFF] transition-colors font-medium relative"
+                className="flex items-center gap-2 text-[1.35rem] text-[#6D4AA9] hover:text-[#26BEFF] transition-colors font-bold relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -156,7 +174,7 @@ export default function Header() {
               >
                 שירותים
                 <ChevronDown
-                  size={16}
+                  size={20}
                   className={`transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
                 />
                 <motion.span
@@ -212,7 +230,7 @@ export default function Header() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="text-[#1A2B3C] hover:text-[#26BEFF] transition-colors font-medium relative"
+                className="text-[1.35rem] text-[#6D4AA9] hover:text-[#26BEFF] transition-colors font-bold relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}

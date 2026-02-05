@@ -7,7 +7,7 @@ import { AccessibilityProvider } from "@/components/accessibility/AccessibilityP
 
 const assistant = Assistant({
   subsets: ["hebrew", "latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   display: "swap",
   variable: "--font-assistant",
 });

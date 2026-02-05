@@ -80,10 +80,10 @@ export default function BottomSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Character placeholder - the actual Character component is fixed positioned */}
-            <div className="w-[300px] h-[350px] relative">
+            <div className="relative">
               {/* Speech bubble */}
               <motion.div
-                className="absolute -top-16 right-1/2 translate-x-1/2 glass-card px-6 py-3 rounded-2xl"
+                className="absolute -top-16 right-1/2 translate-x-1/2 glass-card px-6 py-3 rounded-2xl z-20"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -96,13 +96,15 @@ export default function BottomSection() {
                 <div className="absolute -bottom-2 right-1/2 translate-x-1/2 w-4 h-4 bg-white/40 backdrop-blur-md rotate-45 border-r border-b border-white/60" />
               </motion.div>
 
-              {/* Placeholder for character visual area */}
-              <div className="w-full h-full rounded-3xl bg-gradient-to-br from-[#26BEFF]/10 to-[#9B6AF1]/10 flex items-center justify-center">
-                <span className="text-[#6B7280]/50 text-center">
-                  הדמות מופיעה כאן<br />
-                  (fixed position)
-                </span>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/3.png"
+                alt="שן מחייכת"
+                width={300}
+                height={350}
+                style={{ borderRadius: '12px' }}
+                className="drop-shadow-xl"
+              />
             </div>
           </motion.div>
         </div>

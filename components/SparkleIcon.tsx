@@ -28,22 +28,13 @@ export default function SparkleIcon({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: delay + 0.5, type: "spring", stiffness: 200 }}
     >
-      <motion.svg
+      <svg
         width={size}
         height={size}
         viewBox="0 0 24 24"
         fill="none"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.7, 1, 0.7],
-          rotate: [0, 15, 0, -15, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatDelay: 1,
-          delay: delay,
-          ease: "easeInOut",
+        style={{
+          animation: `sparkle-pulse 3s ease-in-out ${delay}s infinite`,
         }}
       >
         {/* 4-point star sparkle */}
@@ -57,7 +48,7 @@ export default function SparkleIcon({
           d="M12 6L13 10L17 12L13 14L12 18L11 14L7 12L11 10L12 6Z"
           fill="white"
         />
-      </motion.svg>
+      </svg>
     </motion.div>
   );
 }

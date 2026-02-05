@@ -1,5 +1,3 @@
-'use client';
-
 export default function BackgroundBlobs() {
   return (
     <div className="fixed inset-0 pointer-events-none -z-10" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #ffffff 60%, #fafbff 80%, #f8f5ff 100%)' }}>
