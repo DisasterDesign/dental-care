@@ -159,6 +159,14 @@ export default function Footer() {
               Dental Care &copy; 2026 | כל הזכויות שמורות
             </p>
             <div className="flex items-center gap-3">
+              <a
+                href="https://www.fuzionwebz.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400/60 hover:text-gray-400 transition-opacity"
+              >
+                Built by Fuzion
+              </a>
               <motion.a
                 href="#"
                 className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-[#6B7280] hover:bg-[#26BEFF] hover:text-white hover:border-[#26BEFF] transition-all bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
@@ -180,18 +188,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Credit */}
-      <div className="py-3 text-center">
-        <a
-          href="https://www.fuzionwebz.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-gray-400/60 hover:text-gray-400 transition-opacity"
-        >
-          Built by Fuzion
-        </a>
       </div>
     </motion.footer>
   );
