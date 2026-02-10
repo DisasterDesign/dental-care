@@ -181,6 +181,18 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Credit */}
+      <div className="py-3 text-center">
+        <a
+          href="https://www.fuzionwebz.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-gray-400/60 hover:text-gray-400 transition-opacity"
+        >
+          Built by Fuzion
+        </a>
+      </div>
     </motion.footer>
   );
 }
