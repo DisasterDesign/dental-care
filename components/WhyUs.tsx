@@ -85,6 +85,25 @@ export default function WhyUs() {
             </motion.p>
           </motion.div>
 
+          {/* Doctor Photo */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-white/30 backdrop-blur-sm border border-white/40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/gallery/team/doctor-7.webp"
+                alt="הרופא שלנו"
+                loading="lazy"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </motion.div>
+
           {/* Benefits Grid */}
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
