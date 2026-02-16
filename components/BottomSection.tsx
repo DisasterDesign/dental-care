@@ -85,7 +85,6 @@ export default function BottomSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Character placeholder - the actual Character component is fixed positioned */}
             <div className="relative">
               {/* Speech bubble */}
               <motion.div
@@ -98,18 +97,17 @@ export default function BottomSection() {
                 <p className="text-[#1A2B3C] font-medium whitespace-nowrap">
                   נתראה במרפאה! 👋
                 </p>
-                {/* Triangle pointer */}
                 <div className="absolute -bottom-2 right-1/2 translate-x-1/2 w-4 h-4 bg-white/40 backdrop-blur-md rotate-45 border-r border-b border-white/60" />
               </motion.div>
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/3.png"
-                alt="שן מחייכת"
+                src="/gallery/team/doctor-7.webp"
+                alt="הצוות שלנו"
                 width={300}
-                height={350}
-                style={{ borderRadius: '12px' }}
-                className="drop-shadow-xl"
+                height={400}
+                loading="lazy"
+                className="drop-shadow-xl rounded-2xl"
               />
             </div>
           </motion.div>
