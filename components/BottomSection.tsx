@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, Phone, MapPin } from 'lucide-react';
+import GalleryImage from './GalleryImage';
 
 export default function BottomSection() {
   return (
@@ -60,13 +61,18 @@ export default function BottomSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              {[1, 2, 3].map((i) => (
-                <div
+              {[
+                { src: '/gallery/smiles/smile-02-thumb.webp', alt: 'תוצאת טיפול - חיוך מושלם' },
+                { src: '/gallery/smiles/smile-14-thumb.webp', alt: 'תוצאת טיפול - שיניים יפות' },
+                { src: '/gallery/smiles/smile-03-thumb.webp', alt: 'תוצאת טיפול - חיוך טבעי' },
+              ].map((img, i) => (
+                <GalleryImage
                   key={i}
-                  className="aspect-square rounded-2xl bg-white/30 backdrop-blur-sm border-2 border-dashed border-[#26BEFF]/20 flex items-center justify-center"
-                >
-                  <span className="text-[#6B7280]/50 text-sm">תמונה {i}</span>
-                </div>
+                  src={img.src}
+                  alt={img.alt}
+                  aspectRatio="square"
+                  index={i}
+                />
               ))}
             </motion.div>
           </motion.div>

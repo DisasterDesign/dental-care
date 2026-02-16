@@ -6,7 +6,9 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import GalleryImage from '@/components/GalleryImage';
 import { getServiceBySlug, services } from '@/lib/services';
+import { getServiceImages } from '@/lib/gallery';
 
 interface ServicePageClientProps {
   slug: string;
@@ -129,21 +131,27 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
           </motion.div>
         </section>
 
-        {/* Placeholder for future content */}
+        {/* Gallery Section */}
         <section className="container-custom mb-16">
           <motion.div
-            className="glass-card p-8 md:p-10 text-center"
+            className="glass-card p-8 md:p-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <div className="py-16 border-2 border-dashed border-[#26BEFF]/30 rounded-xl">
-              <p className="text-[#6B7280] text-lg">
-                תוכן נוסף יתווסף בקרוב...
-              </p>
-              <p className="text-[#6B7280] text-sm mt-2">
-                (מקום לתמונות, סרטונים, המלצות ועוד)
-              </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1A2B3C] mb-8 text-center">
+              מהמרפאה שלנו
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {getServiceImages(slug).map((img, index) => (
+                <GalleryImage
+                  key={index}
+                  src={img.src}
+                  alt={img.alt}
+                  aspectRatio="video"
+                  index={index}
+                />
+              ))}
             </div>
           </motion.div>
         </section>
