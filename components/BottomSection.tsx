@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, Phone, MapPin } from 'lucide-react';
-import GalleryImage from './GalleryImage';
 
 export default function BottomSection() {
   return (
@@ -53,28 +52,6 @@ export default function BottomSection() {
               <span>רח&apos; משה לוי 16, רמלה</span>
             </div>
 
-            {/* Placeholder for images */}
-            <motion.div
-              className="mt-10 grid grid-cols-3 gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              {[
-                { src: '/gallery/smiles/smile-02-thumb.webp', alt: 'תוצאת טיפול - חיוך מושלם' },
-                { src: '/gallery/smiles/smile-14-thumb.webp', alt: 'תוצאת טיפול - שיניים יפות' },
-                { src: '/gallery/smiles/smile-03-thumb.webp', alt: 'תוצאת טיפול - חיוך טבעי' },
-              ].map((img, i) => (
-                <GalleryImage
-                  key={i}
-                  src={img.src}
-                  alt={img.alt}
-                  aspectRatio="square"
-                  index={i}
-                />
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* Character Side - Right (in RTL this will be on the left visually) */}
