@@ -96,13 +96,17 @@ export default function Character() {
 
   // Blinking
   useEffect(() => {
-    const blinkInterval = setInterval(() => {
-      if (Math.random() > 0.7) {
+    const scheduleBlink = () => {
+      const delay = 1500 + Math.random() * 3000;
+      const timeout = setTimeout(() => {
         setIsBlinking(true);
-        setTimeout(() => setIsBlinking(false), 150);
-      }
-    }, 3000);
-    return () => clearInterval(blinkInterval);
+        setTimeout(() => setIsBlinking(false), 120 + Math.random() * 80);
+        scheduleBlink();
+      }, delay);
+      return timeout;
+    };
+    const timeout = scheduleBlink();
+    return () => clearTimeout(timeout);
   }, []);
 
   // Cache rect on scroll/resize
@@ -208,10 +212,10 @@ export default function Character() {
   }, [isTouchDevice]);
 
   return (
-    <div ref={containerRef} className="fixed bottom-[140px] right-0 z-[-1] pointer-events-none hidden lg:block">
+    <div ref={containerRef} className="fixed bottom-[60px] md:bottom-[140px] right-0 z-[-1] pointer-events-none scale-[0.55] md:scale-100 origin-bottom-right">
       {/* Blue bar - animated path */}
       <svg
-        className="absolute bottom-0 right-0 w-full lg:w-[600px] h-[4px] overflow-visible"
+        className="absolute bottom-0 right-0 w-full lg:w-[600px] h-[4px] overflow-visible hidden md:block"
         viewBox="0 0 600 4"
         preserveAspectRatio="none"
         fill="none"
@@ -239,7 +243,7 @@ export default function Character() {
 
       {/* Twinkling Star - Top Left of Character */}
       <motion.div
-        className="absolute top-[-6px] left-[53px] w-8 h-8 z-30"
+        className="absolute top-[-6px] left-[53px] w-8 h-8 z-30 hidden md:block"
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: [0, 1, 0.6, 1, 0],
