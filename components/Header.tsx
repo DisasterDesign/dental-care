@@ -143,7 +143,7 @@ export default function Header() {
             {/* Home - rightmost in RTL */}
             <motion.a
               href="/"
-              className="text-[1.35rem] text-[#1e3a5f] hover:text-[#26BEFF] transition-colors font-bold relative"
+              className="text-[1.35rem] text-[#173A99] hover:text-[#26BEFF] transition-colors font-bold relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -166,7 +166,7 @@ export default function Header() {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <motion.button
-                className="flex items-center gap-2 text-[1.35rem] text-[#1e3a5f] hover:text-[#26BEFF] transition-colors font-bold relative"
+                className="flex items-center gap-2 text-[1.35rem] text-[#173A99] hover:text-[#26BEFF] transition-colors font-bold relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -231,7 +231,7 @@ export default function Header() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="text-[1.35rem] text-[#1e3a5f] hover:text-[#26BEFF] transition-colors font-bold relative"
+                className="text-[1.35rem] text-[#173A99] hover:text-[#26BEFF] transition-colors font-bold relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
