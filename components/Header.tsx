@@ -101,18 +101,7 @@ export default function Header() {
                 className="object-contain w-full h-full"
               />
             </motion.div>
-            {/* Mobile - doctor name */}
             <motion.div
-              className="sm:hidden"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <p className="text-sm font-medium text-[#1A2B3C]">ד״ר טאלב אבו עאמר</p>
-            </motion.div>
-            {/* Desktop - original */}
-            <motion.div
-              className="hidden sm:block"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
