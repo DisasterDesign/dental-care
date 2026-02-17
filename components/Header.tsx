@@ -101,6 +101,16 @@ export default function Header() {
                 className="object-contain w-full h-full"
               />
             </motion.div>
+            {/* Mobile - doctor name */}
+            <motion.div
+              className="sm:hidden"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <p className="text-sm font-medium text-[#1A2B3C]">ד״ר טאלב אבו עאמר</p>
+            </motion.div>
+            {/* Desktop - original */}
             <motion.div
               className="hidden sm:block"
               initial={{ opacity: 0, x: 20 }}
@@ -108,7 +118,7 @@ export default function Header() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h1 className="text-[1.35rem] sm:text-3xl md:text-4xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#7F1799] bg-clip-text text-transparent">Dental Care</h1>
-              <p className="text-sm sm:text-base md:text-lg text-[#1A2B3C] font-medium">ד״ר טאלב אבו עאמר</p>
+              <p className="text-sm sm:text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
             </motion.div>
           </motion.a>
 
