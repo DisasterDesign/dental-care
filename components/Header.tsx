@@ -108,7 +108,7 @@ export default function Header() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h1 className="text-[1.35rem] sm:text-3xl md:text-4xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#7F1799] bg-clip-text text-transparent">Dental Care</h1>
-              <p className="text-sm sm:text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
+              <p className="text-sm sm:text-base md:text-lg text-[#1A2B3C] font-medium">ד״ר טאלב אבו עאמר</p>
             </motion.div>
           </motion.a>
 
