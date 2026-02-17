@@ -31,7 +31,7 @@ function IconButton({ icon: Icon, label, href, delay = 0, onClick }: IconButtonP
     >
       <motion.div
         className="p-[2px] rounded-full transition-all group-hover:shadow-[0_0_20px_rgba(155,106,241,0.3)] sparkle-hover"
-        style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #1e3a5f 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}
         whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
       >
         <div className="w-14 h-14 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center transition-all group-hover:bg-white/20">
@@ -107,7 +107,7 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="text-[1.35rem] sm:text-3xl md:text-4xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#1e3a5f] bg-clip-text text-transparent">Dental Care</h1>
+              <h1 className="text-[1.35rem] sm:text-3xl md:text-4xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#7F1799] bg-clip-text text-transparent">Dental Care</h1>
               <p className="text-sm sm:text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
             </motion.div>
           </motion.a>
@@ -143,7 +143,7 @@ export default function Header() {
             {/* Home - rightmost in RTL */}
             <motion.a
               href="/"
-              className="text-[1.35rem] text-[#1e3a5f] hover:text-[#26BEFF] transition-colors font-bold relative"
+              className="text-[1.35rem] text-[#7F1799] hover:text-[#26BEFF] transition-colors font-bold relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -166,7 +166,7 @@ export default function Header() {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <motion.button
-                className="flex items-center gap-2 text-[1.35rem] text-[#1e3a5f] hover:text-[#26BEFF] transition-colors font-bold relative"
+                className="flex items-center gap-2 text-[1.35rem] text-[#7F1799] hover:text-[#26BEFF] transition-colors font-bold relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -231,7 +231,7 @@ export default function Header() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="text-[1.35rem] text-[#1e3a5f] hover:text-[#26BEFF] transition-colors font-bold relative"
+                className="text-[1.35rem] text-[#7F1799] hover:text-[#26BEFF] transition-colors font-bold relative"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
@@ -351,7 +351,7 @@ export default function Header() {
                 transition={{ delay: 0.15 }}
               >
                 <a href="https://wa.me/972525212118" className="flex flex-col items-center gap-2">
-                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #1e3a5f 100%)' }}>
+                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}>
                     <div className="w-12 h-12 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center">
                       <Calendar size={20} className="text-white" />
                     </div>
@@ -359,7 +359,7 @@ export default function Header() {
                   <span className="text-[10px] text-[#1A2B3C] font-medium">תיאום תור</span>
                 </a>
                 <a href="#" className="flex flex-col items-center gap-2">
-                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #1e3a5f 100%)' }}>
+                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}>
                     <div className="w-12 h-12 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center">
                       <MessageSquare size={20} className="text-white" />
                     </div>
@@ -367,7 +367,7 @@ export default function Header() {
                   <span className="text-[10px] text-[#1A2B3C] font-medium">פניות</span>
                 </a>
                 <a href="#contact" className="flex flex-col items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #1e3a5f 100%)' }}>
+                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}>
                     <div className="w-12 h-12 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center">
                       <Mail size={20} className="text-white" />
                     </div>
@@ -381,7 +381,7 @@ export default function Header() {
                   }}
                   className="flex flex-col items-center gap-2"
                 >
-                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #1e3a5f 100%)' }}>
+                  <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}>
                     <div className="w-12 h-12 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center">
                       <Accessibility size={20} className="text-white" />
                     </div>
