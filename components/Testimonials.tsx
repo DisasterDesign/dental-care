@@ -95,7 +95,7 @@ export default function Testimonials() {
               whileHover={{ y: -5, transition: { duration: 0.15 } }}
             >
               {/* Quote Icon */}
-              <Quote className="absolute top-4 left-4 w-8 h-8 text-[#1e3a5f]/20" />
+              <Quote className="absolute top-4 left-4 w-8 h-8 text-[#9B6AF1]/20" />
 
               {/* Stars */}
               <div className="flex gap-1 mb-4">

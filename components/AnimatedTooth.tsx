@@ -21,7 +21,7 @@ export default function AnimatedTooth() {
       <defs>
         <linearGradient id="toothGradient" x1="1003.5" y1="-159.5" x2="-115" y2="1199" gradientUnits="userSpaceOnUse">
           <stop stopColor="#26BEFF"/>
-          <stop offset="1" stopColor="#1e3a5f"/>
+          <stop offset="1" stopColor="#9B6AF1"/>
         </linearGradient>
       </defs>
       <path

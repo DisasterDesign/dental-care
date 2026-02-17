@@ -14,7 +14,7 @@ export default function BackgroundBlobs() {
       <div
         className="absolute w-[800px] h-[800px] rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(30, 58, 95, 0.22) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(155, 106, 241, 0.22) 0%, transparent 60%)',
           top: '10%',
           left: '-15%',
         }}
@@ -32,7 +32,7 @@ export default function BackgroundBlobs() {
       <div
         className="absolute w-[500px] h-[500px] rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(30, 58, 95, 0.18) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(155, 106, 241, 0.18) 0%, transparent 65%)',
           bottom: '0%',
           left: '-5%',
         }}

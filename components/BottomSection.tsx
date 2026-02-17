@@ -8,7 +8,7 @@ export default function BottomSection() {
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden glass-section">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#26BEFF]/5 to-[#1e3a5f]/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#26BEFF]/5 to-[#9B6AF1]/5 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
@@ -33,7 +33,7 @@ export default function BottomSection() {
                 href="https://wa.me/972525212118"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-4 rounded-2xl bg-gradient-to-r from-[#26BEFF] to-[#1e3a5f] text-white font-medium flex items-center justify-center gap-3 hover:shadow-xl hover:scale-105 transition-all"
+                className="px-6 py-4 rounded-2xl bg-gradient-to-r from-[#26BEFF] to-[#9B6AF1] text-white font-medium flex items-center justify-center gap-3 hover:shadow-xl hover:scale-105 transition-all"
               >
                 <Calendar className="w-5 h-5" />
                 קביעת תור בוואטסאפ

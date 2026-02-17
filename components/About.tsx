@@ -64,7 +64,7 @@ export default function About() {
 
           {/* Tagline */}
           <motion.p
-            className="text-center text-xl sm:text-2xl font-bold text-[#1e3a5f] mt-10"
+            className="text-center text-xl sm:text-2xl font-bold text-[#9B6AF1] mt-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

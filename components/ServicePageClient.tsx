@@ -47,7 +47,7 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               {/* Icon */}
               <motion.div
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-[#26BEFF] to-[#1e3a5f] flex items-center justify-center flex-shrink-0"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-[#26BEFF] to-[#9B6AF1] flex items-center justify-center flex-shrink-0"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
@@ -85,7 +85,7 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
                     href="https://wa.me/972525212118"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#26BEFF] to-[#1e3a5f] text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
+                    className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#26BEFF] to-[#9B6AF1] text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
                   >
                     <Calendar className="w-5 h-5" />
                     {service.ctaText}
@@ -178,7 +178,7 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
                       href={`/services/${otherService.slug}`}
                       className="glass-card p-4 text-center hover:scale-105 transition-transform group"
                     >
-                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-[#26BEFF]/20 to-[#1e3a5f]/20 flex items-center justify-center group-hover:from-[#26BEFF]/40 group-hover:to-[#1e3a5f]/40 transition-colors">
+                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-[#26BEFF]/20 to-[#9B6AF1]/20 flex items-center justify-center group-hover:from-[#26BEFF]/40 group-hover:to-[#9B6AF1]/40 transition-colors">
                         <OtherIcon className="w-6 h-6 text-[#26BEFF]" />
                       </div>
                       <h3 className="text-sm font-medium text-[#1A2B3C]">

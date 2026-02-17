@@ -143,7 +143,7 @@ export default function Services() {
                 }}
               >
                 {/* Gradient border - visible on hover */}
-                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-[#26BEFF] to-[#1e3a5f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-[#26BEFF] to-[#9B6AF1] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Card content */}
                 <div className="relative p-5 sm:p-6 md:p-7 text-center cursor-pointer rounded-[18px] bg-white/25 backdrop-blur-md border border-white/40 group-hover:border-transparent transition-all duration-300 group-hover:bg-white/35 sparkle-hover h-full group-hover:shadow-[0_30px_60px_rgba(38,190,255,0.15),0_25px_50px_rgba(155,106,241,0.12)]">
                 <motion.div

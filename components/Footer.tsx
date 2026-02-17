@@ -178,7 +178,7 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href="#"
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-[#6B7280] hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] transition-all bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-[#6B7280] hover:bg-[#9B6AF1] hover:text-white hover:border-[#9B6AF1] transition-all bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
                 aria-label="Instagram"
                 whileHover={{ scale: 1.1, y: -2, transition: { duration: 0.15 } }}
                 whileTap={{ scale: 0.9 }}

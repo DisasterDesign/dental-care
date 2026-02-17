@@ -55,7 +55,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
           transition={{ duration: 0.3 }}
           className="flex-shrink-0 mr-4"
         >
-          <ChevronDown className="w-5 h-5 text-[#1e3a5f]" />
+          <ChevronDown className="w-5 h-5 text-[#9B6AF1]" />
         </motion.div>
       </button>
       <AnimatePresence initial={false}>
