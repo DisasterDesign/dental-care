@@ -5,51 +5,49 @@ interface GalleryImage {
 
 const serviceImageMap: Record<string, GalleryImage[]> = {
   'dental-implants': [
-    { src: '/gallery/treatments/treatment-01.webp', alt: 'טיפול השתלת שיניים במרפאה' },
-    { src: '/gallery/smiles/smile-02.webp', alt: 'תוצאת השתלה - חיוך מושלם' },
-    { src: '/gallery/smiles/smile-03.webp', alt: 'חיוך לאחר טיפול' },
+    { src: '/gallery/treatments/dental-implants-1.webp', alt: 'השתלת שיניים - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/dental-implants-2.webp', alt: 'טיפול השתלת שיניים' },
+    { src: '/gallery/treatments/dental-implants-3.webp', alt: 'תוצאת השתלת שיניים' },
   ],
   'teeth-alignment': [
-    { src: '/gallery/treatments/treatment-05.webp', alt: 'יישור שיניים - טיפול' },
-    { src: '/gallery/smiles/smile-04.webp', alt: 'תוצאת יישור שיניים' },
-    { src: '/gallery/smiles/smile-14.webp', alt: 'חיוך ישר ומושלם' },
+    { src: '/gallery/treatments/teeth-alignment-1.webp', alt: 'יישור שיניים - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/teeth-alignment-2.webp', alt: 'טיפול יישור שיניים' },
+    { src: '/gallery/treatments/teeth-alignment-3.webp', alt: 'תוצאת יישור שיניים' },
   ],
   'veneers-crowns': [
-    { src: '/gallery/smiles/smile-01.webp', alt: 'ציפויי חרסינה - תוצאה' },
-    { src: '/gallery/treatments/treatment-15.webp', alt: 'התקנת ציפויים' },
-    { src: '/gallery/smiles/smile-06.webp', alt: 'כתרים - חיוך טבעי' },
+    { src: '/gallery/treatments/veneers-crowns-1.webp', alt: 'ציפויים וכתרים - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/veneers-crowns-2.webp', alt: 'טיפול ציפויים וכתרים' },
+    { src: '/gallery/treatments/veneers-crowns-3.webp', alt: 'תוצאת ציפויים וכתרים' },
   ],
   'root-canal': [
-    { src: '/gallery/treatments/treatment-18.webp', alt: 'טיפול שורש מקצועי' },
-    { src: '/gallery/treatments/treatment-07.webp', alt: 'טיפול שורש במרפאה' },
-    { src: '/gallery/smiles/smile-05.webp', alt: 'חיוך בריא לאחר טיפול' },
+    { src: '/gallery/treatments/root-canal-1.webp', alt: 'טיפול שורש - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/root-canal-2.webp', alt: 'טיפול שורש מקצועי' },
+    { src: '/gallery/treatments/root-canal-3.webp', alt: 'תוצאת טיפול שורש' },
   ],
   'pediatric-dentistry': [
-    { src: '/gallery/treatments/treatment-09.webp', alt: 'טיפול שיניים לילדים' },
-    { src: '/gallery/smiles/smile-07.webp', alt: 'חיוך של ילד מאושר' },
-    { src: '/gallery/treatments/treatment-03.webp', alt: 'טיפול ילדים במרפאה' },
+    { src: '/gallery/treatments/pediatric-dentistry-1.webp', alt: 'רפואת שיניים לילדים - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/pediatric-dentistry-2.webp', alt: 'טיפול שיניים לילדים' },
+    { src: '/gallery/treatments/pediatric-dentistry-3.webp', alt: 'טיפול ילדים באווירה נעימה' },
   ],
   'aesthetic-treatments': [
-    { src: '/gallery/smiles/smile-02.webp', alt: 'הלבנת שיניים - תוצאה' },
-    { src: '/gallery/treatments/treatment-22.webp', alt: 'טיפול אסתטי' },
-    { src: '/gallery/smiles/smile-14.webp', alt: 'חיוך מושלם לאחר טיפול' },
+    { src: '/gallery/treatments/aesthetic-treatments-1.webp', alt: 'טיפולי אסתטיקה - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/aesthetic-treatments-2.webp', alt: 'טיפול אסתטי מתקדם' },
+    { src: '/gallery/treatments/aesthetic-treatments-3.webp', alt: 'תוצאת טיפול אסתטי' },
   ],
   'mouth-restoration': [
-    { src: '/gallery/treatments/treatment-10.webp', alt: 'שיקום הפה' },
-    { src: '/gallery/smiles/smile-01.webp', alt: 'שיקום מלא - תוצאה' },
-    { src: '/gallery/treatments/treatment-13.webp', alt: 'טיפול שיקומי' },
+    { src: '/gallery/treatments/mouth-restoration-1.webp', alt: 'שיקום הפה - תמונה מהמרפאה' },
+    { src: '/gallery/treatments/mouth-restoration-2.webp', alt: 'טיפול שיקום הפה' },
+    { src: '/gallery/treatments/mouth-restoration-3.webp', alt: 'תוצאת שיקום הפה' },
   ],
   'ct-scanning': [
-    { src: '/gallery/treatments/treatment-04.webp', alt: 'צילום CT במרפאה' },
-    { src: '/gallery/treatments/treatment-06.webp', alt: 'ציוד דיגיטלי מתקדם' },
-    { src: '/gallery/smiles/smile-03.webp', alt: 'אבחון מדויק ותכנון טיפול' },
+    { src: '/gallery/treatments/ct-scanning-1.webp', alt: 'צילום CT במרפאה' },
   ],
 };
 
 const defaultImages: GalleryImage[] = [
-  { src: '/gallery/treatments/treatment-01.webp', alt: 'טיפול שיניים מקצועי' },
-  { src: '/gallery/smiles/smile-02.webp', alt: 'תוצאת טיפול - חיוך יפה' },
-  { src: '/gallery/smiles/smile-14.webp', alt: 'חיוך מושלם' },
+  { src: '/gallery/treatments/dental-implants-1.webp', alt: 'טיפול שיניים מקצועי' },
+  { src: '/gallery/treatments/aesthetic-treatments-1.webp', alt: 'טיפול אסתטי' },
+  { src: '/gallery/treatments/veneers-crowns-1.webp', alt: 'ציפויים וכתרים' },
 ];
 
 export function getServiceImages(slug: string): GalleryImage[] {
