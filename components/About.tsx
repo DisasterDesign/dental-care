@@ -32,7 +32,7 @@ export default function About() {
               transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A2B3C]">
-                אודות Dental Care
+                אודותינו
               </h2>
             </motion.div>
           </motion.div>

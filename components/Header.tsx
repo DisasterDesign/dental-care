@@ -62,9 +62,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '#about', label: 'אודות' },
-    { href: '#why-us', label: 'למה אנחנו' },
-    { href: '#contact', label: 'צור קשר' },
+    { href: '/#about', label: 'אודות' },
+    { href: '/#why-us', label: 'למה אנחנו' },
+    { href: '/#contact', label: 'צור קשר' },
   ];
 
   return (
@@ -116,7 +116,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-20">
             <IconButton icon={Calendar} label="תיאום תור" href="https://wa.me/972525212118" delay={0} />
             <IconButton icon={MessageSquare} label="פניות" delay={0.1} />
-            <IconButton icon={Mail} label="צור קשר" href="#contact" delay={0.2} />
+            <IconButton icon={Mail} label="צור קשר" href="/#contact" delay={0.2} />
             <IconButton icon={Accessibility} label="נגישות" delay={0.3} onClick={() => setIsAccessibilityOpen(true)} />
           </div>
 
@@ -199,7 +199,7 @@ export default function Header() {
                     <div className="py-2">
                       {/* Link to services section */}
                       <a
-                        href="#services"
+                        href="/#services"
                         className="block px-4 py-2 text-[#1A2B3C] hover:bg-[#26BEFF]/10 transition-colors font-semibold border-b border-gray-100"
                         onClick={() => setIsServicesOpen(false)}
                       >
@@ -307,7 +307,7 @@ export default function Header() {
           >
             <div className="grid grid-cols-2 gap-2">
               <a
-                href="#services"
+                href="/#services"
                 className="col-span-2 px-3 py-2 text-center text-[#1A2B3C] font-semibold border-b border-gray-100 mb-1"
                 onClick={() => setIsMobileServicesOpen(false)}
               >
@@ -366,7 +366,7 @@ export default function Header() {
                   </div>
                   <span className="text-[10px] text-[#1A2B3C] font-medium">פניות</span>
                 </a>
-                <a href="#contact" className="flex flex-col items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+                <a href="/#contact" className="flex flex-col items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                   <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}>
                     <div className="w-12 h-12 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center">
                       <Mail size={20} className="text-white" />
