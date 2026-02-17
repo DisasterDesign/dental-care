@@ -13,16 +13,16 @@ const assistant = Assistant({
 });
 
 export const metadata: Metadata = {
-  title: "Dental Care - רפואת שיניים לכל המשפחה | רמלה",
-  description: "מרפאת שיניים מתקדמת ברמלה. ד\"ר טאלב - השתלות שיניים, יישור שיניים, טיפולי שורש, רפואת ילדים ועוד. שירות חירום 24/7. צילום CT במקום.",
-  keywords: "רופא שיניים רמלה, מרפאת שיניים, השתלות שיניים, יישור שיניים, ד\"ר טאלב",
+  title: "Dental Care | מרפאת שיניים מתקדמת - ד״ר טאלב אבו עאמר",
+  description: "מרפאת שיניים מתקדמת המספקת טיפולי שיניים לכל המשפחה: השתלות שיניים, ציפויים אסתטיים, טיפולי שורש, רפואת שיניים לילדים, צילום CT במקום. בהובלת ד״ר טאלב אבו עאמר.",
+  keywords: "מרפאת שיניים, רופא שיניים, השתלות שיניים, ציפויי שיניים אסתטיים, רפואת שיניים לילדים, צילום CT, טיפול שורש, הלבנת שיניים, ד״ר טאלב אבו עאמר, dental care, רופא שיניים רמלה",
   icons: {
     icon: "/Fabicon.svg",
   },
   metadataBase: new URL("https://dental-care-d5g.pages.dev"),
   openGraph: {
-    title: "Dental Care - רפואת שיניים לכל המשפחה | רמלה",
-    description: "מרפאת שיניים מתקדמת ברמלה. ד\"ר טאלב - השתלות שיניים, יישור שיניים, טיפולי שורש, רפואת ילדים ועוד. שירות חירום 24/7.",
+    title: "Dental Care | מרפאת שיניים מתקדמת - ד״ר טאלב אבו עאמר",
+    description: "מרפאת שיניים מתקדמת לכל המשפחה - השתלות, ציפויים אסתטיים, CT במקום. בהובלת ד״ר טאלב אבו עאמר.",
     url: "https://dental-care-d5g.pages.dev",
     siteName: "Dental Care",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1024,
         height: 1024,
-        alt: "Dental Care - מרפאת שיניים ברמלה",
+        alt: "Dental Care - מרפאת שיניים מתקדמת בהובלת ד״ר טאלב אבו עאמר",
       },
     ],
     locale: "he_IL",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dental Care - רפואת שיניים לכל המשפחה | רמלה",
-    description: "מרפאת שיניים מתקדמת ברמלה. השתלות שיניים, יישור שיניים, טיפולי שורש. שירות חירום 24/7.",
+    title: "Dental Care | מרפאת שיניים מתקדמת - ד״ר טאלב אבו עאמר",
+    description: "מרפאת שיניים מתקדמת לכל המשפחה - השתלות שיניים, ציפויים אסתטיים, טיפולי שורש, צילום CT במקום.",
     images: ["/logo.png"],
   },
 };
@@ -62,6 +62,37 @@ export default function RootLayout({
           <div id="main-content">
             {children}
           </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Dentist",
+                "name": "Dental Care - ד״ר טאלב אבו עאמר",
+                "description": "מרפאת שיניים מתקדמת לכל המשפחה",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "רח' משה לוי 16",
+                  "addressLocality": "רמלה",
+                  "addressCountry": "IL"
+                },
+                "telephone": "074-740-22-33",
+                "openingHours": "Su-Th 08:00-20:00",
+                "medicalSpecialty": "Dentistry",
+                "availableService": [
+                  "השתלות שיניים",
+                  "ציפויי שיניים אסתטיים",
+                  "טיפולי שורש",
+                  "רפואת שיניים לילדים",
+                  "צילום CT",
+                  "הלבנת שיניים",
+                  "טיפולי חניכיים",
+                  "יישור שיניים",
+                  "שיקום הפה"
+                ]
+              })
+            }}
+          />
         </AccessibilityProvider>
       </body>
     </html>

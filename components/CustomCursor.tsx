@@ -80,7 +80,7 @@ export default function CustomCursor() {
     <>
       <div
         ref={outerRef}
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full bg-gradient-to-br from-[#26BEFF] to-[#9B6AF1]"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full bg-gradient-to-br from-[#26BEFF] to-[#1e3a5f]"
         style={{
           width: 24,
           height: 24,
