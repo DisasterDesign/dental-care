@@ -168,7 +168,9 @@ export default function Footer() {
                 Built by Fuzion
               </a>
               <motion.a
-                href="#"
+                href="https://www.facebook.com/DENTALCARERAMLA?ref=1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-[#6B7280] hover:bg-[#26BEFF] hover:text-white hover:border-[#26BEFF] transition-all bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
                 aria-label="Facebook"
                 whileHover={{ scale: 1.1, y: -2, transition: { duration: 0.15 } }}
@@ -177,7 +179,9 @@ export default function Footer() {
                 <Facebook size={20} />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.instagram.com/dr.dentalcare.24?igsh=MmU5NjZ4N2c0cHdj&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-[#6B7280] hover:bg-[#9B6AF1] hover:text-white hover:border-[#9B6AF1] transition-all bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
                 aria-label="Instagram"
                 whileHover={{ scale: 1.1, y: -2, transition: { duration: 0.15 } }}
