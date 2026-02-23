@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Phone, MapPin } from 'lucide-react';
+import { Calendar, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 export default function BottomSection() {
   return (
@@ -27,7 +27,7 @@ export default function BottomSection() {
             </p>
 
             {/* Quick Actions */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start mb-8">
               <a
                 href="https://wa.me/972525212118"
                 target="_blank"
@@ -36,6 +36,13 @@ export default function BottomSection() {
               >
                 <Calendar className="w-5 h-5" />
                 קביעת תור בוואטסאפ
+              </a>
+              <a
+                href="whatsapp://send?phone=972525212118&text=%D7%93%D7%A0%D7%98%D7%9C%20%D7%A7%D7%99%D7%99%D7%A8%20%D7%A9%D7%9C%D7%95%D7%9D%2C%20%0A%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%91%D7%9E%D7%A8%D7%A4%D7%90%D7%AA%D7%9B%D7%9D."
+                className="px-6 py-4 rounded-2xl bg-[#25D366] text-white font-medium flex items-center justify-center gap-3 hover:shadow-xl hover:scale-105 transition-all"
+              >
+                <MessageCircle className="w-5 h-5" />
+                ייעוץ מהיר בוואטסאפ
               </a>
               <a
                 href="tel:074-740-22-33"

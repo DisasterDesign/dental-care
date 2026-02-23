@@ -2,10 +2,12 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import About from '@/components/About';
+import DoctorIntro from '@/components/DoctorIntro';
 import Services from '@/components/Services';
 import WhyUs from '@/components/WhyUs';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import JoinTeam from '@/components/JoinTeam';
 import Contact from '@/components/Contact';
 import BottomSection from '@/components/BottomSection';
 import Footer from '@/components/Footer';
@@ -20,10 +22,12 @@ export default function Home() {
         <Hero />
         <Stats />
         <About />
+        <DoctorIntro />
         <Services />
         <WhyUs />
         <Testimonials />
         <FAQ />
+        <JoinTeam />
         <Contact />
         <BottomSection />
       </main>

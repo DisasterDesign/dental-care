@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { MapPin, Calendar, Phone } from 'lucide-react';
+import { MapPin, Calendar, Phone, MessageCircle } from 'lucide-react';
 import AnimatedTooth from './AnimatedTooth';
 
 const cardReveal = {
@@ -146,6 +146,30 @@ export default function Hero() {
                 <Phone className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#26BEFF]" />
               </motion.div>
               <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">שירות 24/7</span>
+            </motion.a>
+          </motion.div>
+
+          {/* Button 4 - WhatsApp Bot */}
+          <motion.div
+            className="relative"
+            variants={cardReveal}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            onMouseEnter={() => setHoveredButton('bot')}
+            onMouseLeave={() => setHoveredButton(null)}
+          >
+            <HoverStar isVisible={hoveredButton === 'bot'} />
+            <motion.a
+              href="whatsapp://send?phone=972525212118&text=%D7%93%D7%A0%D7%98%D7%9C%20%D7%A7%D7%99%D7%99%D7%A8%20%D7%A9%D7%9C%D7%95%D7%9D%2C%20%0A%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%91%D7%9E%D7%A8%D7%A4%D7%90%D7%AA%D7%9B%D7%9D."
+              className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-[#25D366]/20 backdrop-blur-md border border-[#25D366]/40 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
+              whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(37, 211, 102, 0.25), 0 20px 40px rgba(37, 211, 102, 0.15)", transition: { duration: 0.15 } }}
+            >
+              <motion.div
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-[#25D366]/20 border border-[#25D366]/40 flex-shrink-0"
+                whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.15 } }}
+              >
+                <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-[#25D366]" />
+              </motion.div>
+              <span className="text-base sm:text-lg md:text-xl font-medium text-[#1A2B3C]">ייעוץ מהיר בוואטסאפ</span>
             </motion.a>
           </motion.div>
         </motion.div>
