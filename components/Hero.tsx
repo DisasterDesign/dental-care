@@ -70,19 +70,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A2B3C] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#9B6AF1] bg-clip-text text-transparent">
             הדרך לחיוך המושלם שלך מתחילה כאן!
           </h2>
-          <motion.a
-            href="https://wa.me/972548916234"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-lg sm:text-xl md:text-2xl text-[#26BEFF] hover:text-[#9B6AF1] transition-colors font-medium underline underline-offset-4"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            לחץ כאן לתיאום תור
-          </motion.a>
         </motion.div>
 
         {/* Quick Actions - Centered */}
