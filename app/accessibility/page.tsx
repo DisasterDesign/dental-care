@@ -82,12 +82,12 @@ export default function AccessibilityPage() {
               <li>
                 <strong>וואטסאפ:</strong>{' '}
                 <a
-                  href="https://wa.me/972525212118"
+                  href="https://wa.me/972548916234"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#26BEFF] hover:underline"
                 >
-                  052-521-2118
+                  054-891-6234
                 </a>
               </li>
               <li>

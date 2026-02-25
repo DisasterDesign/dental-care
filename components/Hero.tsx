@@ -63,6 +63,28 @@ export default function Hero() {
 
       {/* Content Container */}
       <div className="container-custom relative z-10 w-full">
+        {/* Hero Text */}
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A2B3C] mb-4">
+            הדרך לחיוך המושלם שלך מתחילה כאן!
+          </h2>
+          <motion.a
+            href="https://wa.me/972548916234"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-lg sm:text-xl md:text-2xl text-[#26BEFF] hover:text-[#9B6AF1] transition-colors font-medium underline underline-offset-4"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            לחץ כאן לתיאום תור
+          </motion.a>
+        </motion.div>
+
         {/* Quick Actions - Centered */}
         <motion.div
           className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 relative"
@@ -109,7 +131,7 @@ export default function Hero() {
           >
             <HoverStar isVisible={hoveredButton === 'whatsapp'} />
             <motion.a
-              href="https://wa.me/972525212118"
+              href="https://wa.me/972548916234"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
@@ -135,7 +157,7 @@ export default function Hero() {
           >
             <HoverStar isVisible={hoveredButton === 'phone'} />
             <motion.a
-              href="tel:052-521-2118"
+              href="tel:054-891-6234"
               className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-white/40 backdrop-blur-md border border-white/60 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
               whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(38, 190, 255, 0.2), 0 20px 40px rgba(155, 106, 241, 0.15)", transition: { duration: 0.15 } }}
             >
@@ -159,7 +181,7 @@ export default function Hero() {
           >
             <HoverStar isVisible={hoveredButton === 'bot'} />
             <motion.a
-              href="whatsapp://send?phone=972525212118&text=%D7%93%D7%A0%D7%98%D7%9C%20%D7%A7%D7%99%D7%99%D7%A8%20%D7%A9%D7%9C%D7%95%D7%9D%2C%20%0A%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%91%D7%9E%D7%A8%D7%A4%D7%90%D7%AA%D7%9B%D7%9D."
+              href="whatsapp://send?phone=972548916234&text=%D7%93%D7%A0%D7%98%D7%9C%20%D7%A7%D7%99%D7%99%D7%A8%20%D7%A9%D7%9C%D7%95%D7%9D%2C%20%0A%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%99%D7%99%D7%A2%D7%95%D7%A5%20%D7%91%D7%9E%D7%A8%D7%A4%D7%90%D7%AA%D7%9B%D7%9D."
               className="px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 text-center cursor-pointer rounded-3xl bg-[#25D366]/20 backdrop-blur-md border border-[#25D366]/40 flex items-center gap-3 sm:gap-4 md:gap-5 sparkle-hover"
               whileHover={{ y: -10, scale: 1.03, boxShadow: "0 30px 60px rgba(37, 211, 102, 0.25), 0 20px 40px rgba(37, 211, 102, 0.15)", transition: { duration: 0.15 } }}
             >

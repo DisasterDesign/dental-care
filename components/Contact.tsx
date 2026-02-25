@@ -119,10 +119,10 @@ export default function Contact() {
                         074-740-22-33
                       </a>
                       <a
-                        href="tel:052-521-2118"
+                        href="tel:054-891-6234"
                         className="block text-[#6B7280] hover:text-[#26BEFF] transition-colors"
                       >
-                        052-521-2118
+                        054-891-6234
                       </a>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function Contact() {
 
               {/* WhatsApp Button */}
               <motion.a
-                href="https://wa.me/972525212118?text=שלום, אשמח לקבוע תור"
+                href="https://wa.me/972548916234?text=שלום, אשמח לקבוע תור"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 sm:mt-8 w-full text-[#25D366] py-3 sm:py-4 px-4 sm:px-6 rounded-xl flex items-center justify-center gap-3 font-semibold text-base sm:text-lg bg-white/30 backdrop-blur-md border border-white/40 sparkle-hover"
@@ -185,6 +185,18 @@ export default function Contact() {
             </motion.div>
           </div>
         </motion.div>
+
+        {/* Decorative Character */}
+        <motion.img
+          src="/character/phone.png"
+          alt=""
+          className="absolute bottom-4 left-4 w-20 h-20 md:w-24 md:h-24 opacity-[0.18] pointer-events-none select-none"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.18 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.8 }}
+          aria-hidden="true"
+        />
       </div>
     </section>
   );

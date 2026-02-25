@@ -85,7 +85,7 @@ export default function JoinTeam() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <a
-                href="https://wa.me/972525212118?text=שלום, אני מעוניין/ת להצטרף לצוות"
+                href="https://wa.me/972548916234?text=שלום, אני מעוניין/ת להצטרף לצוות"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#26BEFF] to-[#9B6AF1] text-white font-medium flex items-center justify-center gap-3 hover:shadow-xl hover:scale-105 transition-all"

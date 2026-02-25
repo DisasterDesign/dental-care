@@ -113,7 +113,7 @@ export default function Header() {
 
           {/* Left - Icon Buttons (Desktop) */}
           <div className="hidden md:flex items-center gap-20">
-            <IconButton icon={Calendar} label="תיאום תור" href="https://wa.me/972525212118" delay={0} />
+            <IconButton icon={Calendar} label="תיאום תור" href="https://wa.me/972548916234" delay={0} />
             <IconButton icon={MessageSquare} label="פניות" delay={0.1} />
             <IconButton icon={Mail} label="צור קשר" href="/#contact" delay={0.2} />
             <IconButton icon={Accessibility} label="נגישות" delay={0.3} onClick={() => setIsAccessibilityOpen(true)} />
@@ -349,7 +349,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 }}
               >
-                <a href="https://wa.me/972525212118" className="flex flex-col items-center gap-2">
+                <a href="https://wa.me/972548916234" className="flex flex-col items-center gap-2">
                   <div className="p-[2px] rounded-full" style={{ background: 'linear-gradient(135deg, #26BEFF 0%, #7F1799 100%)' }}>
                     <div className="w-12 h-12 rounded-full bg-transparent backdrop-blur-md flex items-center justify-center">
                       <Calendar size={20} className="text-white" />

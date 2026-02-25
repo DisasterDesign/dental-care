@@ -128,6 +128,18 @@ export default function FAQ() {
             />
           ))}
         </div>
+
+        {/* Decorative Character */}
+        <motion.img
+          src="/character/think.png"
+          alt=""
+          className="absolute bottom-6 right-6 w-20 h-20 md:w-24 md:h-24 opacity-[0.18] pointer-events-none select-none"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.18 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.8 }}
+          aria-hidden="true"
+        />
       </div>
     </section>
   );

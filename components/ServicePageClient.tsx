@@ -82,7 +82,7 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
                   transition={{ delay: 0.5 }}
                 >
                   <a
-                    href="https://wa.me/972525212118"
+                    href="https://wa.me/972548916234"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#26BEFF] to-[#9B6AF1] text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-shadow"
