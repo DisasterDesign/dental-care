@@ -86,16 +86,13 @@ export default function BottomSection() {
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/gallery/team/doctor-7.webp"
-                alt="ד״ר טאלב אבו עאמר - רופא שיניים"
+                src="/character/clipboard.png"
+                alt="דנטי - הדמות של Dental Care"
                 width={400}
-                height={530}
+                height={400}
                 loading="lazy"
-                className="drop-shadow-xl rounded-2xl max-w-[400px] w-full"
+                className="drop-shadow-xl max-w-[350px] w-full"
               />
-              <p className="text-center text-lg font-bold text-[#1A2B3C] mt-4">
-                ד״ר טאלב אבו עאמר
-              </p>
             </div>
           </motion.div>
         </div>
