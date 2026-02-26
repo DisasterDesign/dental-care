@@ -70,7 +70,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#9B6AF1] bg-clip-text text-transparent mt-5 sm:mt-0 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#9B6AF1] bg-clip-text text-transparent mt-5 sm:mt-0 drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
             הדרך לחיוך המושלם שלך מתחילה כאן!
           </h2>
         </motion.div>
