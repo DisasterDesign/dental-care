@@ -65,14 +65,16 @@ export default function Hero() {
       <div className="container-custom relative z-10 w-full">
         {/* Hero Text */}
         <motion.div
-          className="text-center mb-10"
+          className="text-center mb-10 mt-5 sm:mt-0"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#9B6AF1] bg-clip-text text-transparent mt-5 sm:mt-0" style={{ filter: 'drop-shadow(0 0 1px white) drop-shadow(0 0 1px white)' }}>
-            הדרך לחיוך המושלם שלך מתחילה כאן!
-          </h2>
+          <div className="inline-block px-8 sm:px-12 py-5 sm:py-6 rounded-3xl bg-white/40 backdrop-blur-md border border-white/60">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#9B6AF1] bg-clip-text text-transparent">
+              הדרך לחיוך המושלם שלך מתחילה כאן!
+            </h2>
+          </div>
         </motion.div>
 
         {/* Quick Actions - Centered */}
