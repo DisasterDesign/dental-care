@@ -12,6 +12,7 @@ import Contact from '@/components/Contact';
 import BottomSection from '@/components/BottomSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import CampaignPopup from '@/components/CampaignPopup';
 import Character from '@/components/Character';
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <CampaignPopup />
       <Character />
     </div>
   );
