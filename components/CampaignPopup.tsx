@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import Image from 'next/image';
-
 export default function CampaignPopup() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -52,13 +50,11 @@ export default function CampaignPopup() {
             </button>
 
             {/* Campaign Image */}
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/campaign.jpeg"
               alt="מבצע חג מיוחד - 20 ציפויי שיניים ב-1,000 שח לחודש בפריסה ל-36 חודשים"
-              width={800}
-              height={1000}
               className="w-full h-auto"
-              priority
             />
 
             {/* WhatsApp CTA */}
