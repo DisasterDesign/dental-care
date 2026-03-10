@@ -53,7 +53,7 @@ export default function CampaignPopup() {
 
             {/* Campaign Image */}
             <Image
-              src="/קמפיין.jpeg"
+              src="/campaign.jpeg"
               alt="מבצע חג מיוחד - 20 ציפויי שיניים ב-1,000 שח לחודש בפריסה ל-36 חודשים"
               width={800}
               height={1000}
