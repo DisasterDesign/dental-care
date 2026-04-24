@@ -53,13 +53,13 @@ export default function CampaignPopup() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/campaign.jpeg"
-              alt="מבצע חג מיוחד - 20 ציפויי שיניים ב-1,000 שח לחודש בפריסה ל-36 חודשים"
+              alt="מבצע מיוחד - 20 ציפויי שיניים ב-1,200 שח לחודש בפריסה ל-36 חודשים"
               className="w-full h-auto"
             />
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/972548916234?text=היי, אשמח לשמוע על מבצע ציפויי השיניים"
+              href="https://wa.me/972548916234?text=היי, אשמח לשמוע על מבצע ציפויי השיניים ב-1,200 שח לחודש"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-4 bg-[#25D366] text-white text-center text-lg font-bold hover:bg-[#1fb855] transition-colors"
