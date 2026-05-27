@@ -88,26 +88,19 @@ export default function Header() {
             whileHover={{ scale: 1.03 }}
           >
             <motion.div
-              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center"
-              initial={{ rotate: -10, scale: 0.8 }}
-              animate={{ rotate: 0, scale: 1 }}
+              className="h-16 sm:h-20 md:h-24 flex items-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 150 }}
             >
               <Image
-                src="/logoheader.svg"
-                alt="Dental Care Logo"
-                width={96}
-                height={96}
-                className="object-contain w-full h-full"
+                src="/logoheader.png"
+                alt="Dental Care - רפואת שיניים לכל המשפחה"
+                width={672}
+                height={192}
+                priority
+                className="object-contain h-full w-auto"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h1 className="text-[1.35rem] sm:text-3xl md:text-4xl font-bold bg-gradient-to-l from-[#26BEFF] to-[#7F1799] bg-clip-text text-transparent">Dental Care</h1>
-              <p className="text-sm sm:text-base md:text-lg text-[#6B7280]">רפואת שיניים לכל המשפחה</p>
             </motion.div>
           </motion.a>
 
