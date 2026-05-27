@@ -100,6 +100,10 @@ export default function Header() {
                 height={192}
                 priority
                 className="object-contain h-full w-auto"
+                style={{
+                  filter:
+                    "drop-shadow(0 1px 2px rgba(127, 23, 153, 0.45)) drop-shadow(0 0 6px rgba(38, 190, 255, 0.35))",
+                }}
               />
             </motion.div>
           </motion.a>
