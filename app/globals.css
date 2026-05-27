@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-/* Custom Blue Circle Cursor */
-* {
-  cursor: none !important;
-}
-
 @layer base {
   :root {
     --text-primary: #1A2B3C;
@@ -350,7 +345,7 @@ body.pause-animations *::after {
   transition: none !important;
 }
 
-/* Big Cursor Mode - overrides cursor: none */
+/* Big Cursor Mode */
 body.big-cursor,
 body.big-cursor * {
   cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%23000" stroke="%23fff" stroke-width="1" d="M5.5 3.21V20.8l4.86-4.86h8.14L5.5 3.21z"/></svg>') 0 0, auto !important;

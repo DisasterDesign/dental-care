@@ -3,7 +3,6 @@ import { Assistant } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
-import CustomCursor from "@/components/CustomCursor";
 import { AccessibilityProvider } from "@/components/accessibility/AccessibilityProvider";
 
 const assistant = Assistant({
@@ -76,7 +75,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             דלג לתוכן הראשי
           </a>
           <BackgroundBlobs />
-          <CustomCursor />
           <div id="main-content">
             {children}
           </div>
