@@ -1,3 +1,4 @@
+import { consultation, reception } from "@/lib/clinicPhones";
 import type { Metadata } from "next";
 import { Assistant } from "next/font/google";
 import Script from "next/script";
@@ -113,7 +114,7 @@ fbq('track', 'PageView');`}
                   "addressLocality": "רמלה",
                   "addressCountry": "IL"
                 },
-                "telephone": "074-740-22-33",
+                "telephone": [consultation.number, reception.number],
                 "openingHours": "Su-Th 08:00-20:00",
                 "medicalSpecialty": "Dentistry",
                 "availableService": [

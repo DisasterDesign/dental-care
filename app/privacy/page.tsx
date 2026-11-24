@@ -1,3 +1,4 @@
+import ClinicPhoneLinks from "@/components/ClinicPhoneLinks";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -138,7 +139,7 @@ export default function PrivacyPage() {
                 <div className="bg-white/30 backdrop-blur-sm rounded-xl p-6 space-y-2">
                   <p className="text-[#1A2B3C]"><strong>מרפאת Dental Care</strong></p>
                   <p className="text-[#6B7280]">רח&apos; משה לוי 16, רמלה</p>
-                  <p className="text-[#6B7280]">טלפון: 074-740-22-33</p>
+                  <ClinicPhoneLinks />
                   <p className="text-[#6B7280]">דוא&quot;ל: info@dentalcare.co.il</p>
                 </div>
               </section>

@@ -1,5 +1,6 @@
 'use client';
 
+import { consultation } from "@/lib/clinicPhones";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Clock, Menu, X, Calendar, MessageSquare, Mail, Accessibility, ChevronDown } from 'lucide-react';
@@ -275,13 +276,13 @@ export default function Header() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <motion.a
-              href="tel:074-740-22-33"
+              href={consultation.href}
               className="flex items-center gap-2 text-[#26BEFF] font-medium hover:text-[#2A7B88] transition-colors"
               whileHover={{ scale: 1.08, x: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Phone size={16} />
-              <span>074-740-22-33</span>
+              <span>לייעוץ <bdi dir="ltr">{consultation.number}</bdi></span>
             </motion.a>
             <div className="flex items-center gap-2 text-[#6B7280]">
               <Clock size={16} />
@@ -394,11 +395,11 @@ export default function Header() {
                 transition={{ delay: 0.25 }}
               >
                 <a
-                  href="tel:074-740-22-33"
+                  href={consultation.href}
                   className="flex items-center gap-2 text-[#26BEFF] font-medium"
                 >
                   <Phone size={16} />
-                  <span>074-740-22-33</span>
+                  <span>לייעוץ <bdi dir="ltr">{consultation.number}</bdi></span>
                 </a>
                 <div className="flex items-center gap-2 text-[#6B7280]">
                   <Clock size={16} />

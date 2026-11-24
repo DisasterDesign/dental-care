@@ -1,5 +1,6 @@
 'use client';
 
+import { reception } from "@/lib/clinicPhones";
 import { motion } from 'framer-motion';
 import { Users, Phone, MessageCircle } from 'lucide-react';
 import SparkleIcon from './SparkleIcon';
@@ -94,11 +95,11 @@ export default function JoinTeam() {
                 שלחו קורות חיים בוואטסאפ
               </a>
               <a
-                href="tel:074-740-22-33"
+                href={reception.href}
                 className="px-8 py-4 rounded-2xl glass-card text-[#1A2B3C] font-medium flex items-center justify-center gap-3 hover:scale-105 transition-all"
               >
                 <Phone className="w-5 h-5 text-[#26BEFF]" />
-                074-740-22-33
+                מזכירות <bdi dir="ltr">{reception.number}</bdi>
               </a>
             </motion.div>
           </div>

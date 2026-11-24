@@ -1,7 +1,8 @@
 'use client';
 
+import ClinicPhoneLinks from "@/components/ClinicPhoneLinks";
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 const containerVariants = {
@@ -116,22 +117,7 @@ export default function Footer() {
             <h4 className="font-bold mb-4 text-[#1A2B3C]">פרטי התקשרות</h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="tel:074-740-22-33"
-                  className="flex items-center gap-2 text-[#6B7280] hover:text-[#26BEFF] transition-colors"
-                >
-                  <Phone size={16} />
-                  <span>074-740-22-33</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:052-521-2118"
-                  className="flex items-center gap-2 text-[#6B7280] hover:text-[#26BEFF] transition-colors"
-                >
-                  <Phone size={16} />
-                  <span>052-521-2118</span>
-                </a>
+                <ClinicPhoneLinks />
               </li>
               <li>
                 <a

@@ -1,3 +1,4 @@
+import ClinicPhoneLinks from "@/components/ClinicPhoneLinks";
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -74,10 +75,7 @@ export default function AccessibilityPage() {
             </p>
             <ul className="space-y-2 mr-4">
               <li>
-                <strong>טלפון:</strong>{' '}
-                <a href="tel:074-740-22-33" className="text-[#26BEFF] hover:underline">
-                  074-740-22-33
-                </a>
+                <ClinicPhoneLinks />
               </li>
               <li>
                 <strong>וואטסאפ:</strong>{' '}

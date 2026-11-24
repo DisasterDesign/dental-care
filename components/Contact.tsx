@@ -1,5 +1,6 @@
 'use client';
 
+import ClinicPhoneLinks from "@/components/ClinicPhoneLinks";
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, MessageCircle } from 'lucide-react';
 import SparkleIcon from './SparkleIcon';
@@ -111,20 +112,7 @@ export default function Contact() {
                   </motion.div>
                   <div>
                     <h4 className="font-semibold text-[#1A2B3C] mb-1">טלפון</h4>
-                    <div className="space-y-1">
-                      <a
-                        href="tel:074-740-22-33"
-                        className="block text-[#6B7280] hover:text-[#26BEFF] transition-colors"
-                      >
-                        074-740-22-33
-                      </a>
-                      <a
-                        href="tel:054-891-6234"
-                        className="block text-[#6B7280] hover:text-[#26BEFF] transition-colors"
-                      >
-                        054-891-6234
-                      </a>
-                    </div>
+                    <ClinicPhoneLinks />
                   </div>
                 </motion.div>
 

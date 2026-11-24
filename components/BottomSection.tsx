@@ -1,5 +1,6 @@
 'use client';
 
+import { consultation } from "@/lib/clinicPhones";
 import { motion } from 'framer-motion';
 import { Calendar, Phone, MapPin, MessageCircle } from 'lucide-react';
 
@@ -45,11 +46,11 @@ export default function BottomSection() {
                 ייעוץ מהיר בוואטסאפ
               </a>
               <a
-                href="tel:074-740-22-33"
+                href={consultation.href}
                 className="px-6 py-4 rounded-2xl glass-card text-[#1A2B3C] font-medium flex items-center justify-center gap-3 hover:scale-105 transition-all"
               >
                 <Phone className="w-5 h-5 text-[#26BEFF]" />
-                074-740-22-33
+                לקביעת ייעוץ <bdi dir="ltr">{consultation.number}</bdi>
               </a>
             </div>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { consultation } from "@/lib/clinicPhones";
 import { motion } from 'framer-motion';
 import { Calendar, Phone, CheckCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -91,11 +92,11 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
                     {service.ctaText}
                   </a>
                   <a
-                    href="tel:074-740-22-33"
+                    href={consultation.href}
                     className="px-6 py-3 rounded-xl bg-white/50 backdrop-blur-md border border-white/60 text-[#1A2B3C] font-medium flex items-center justify-center gap-2 hover:bg-white/70 transition-colors"
                   >
                     <Phone className="w-5 h-5" />
-                    התקשרו עכשיו
+                    התקשרו לקביעת ייעוץ
                   </a>
                 </motion.div>
               </div>
